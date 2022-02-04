@@ -1,6 +1,6 @@
 cask 'yubico-yubihsm2-sdk' do
-  version '2019-03'
-  sha256 '3691ce34b98de58de322b891c0177f8d57d801be5f4a9a160b2a8c8213ebf78f'
+  version '2019-12'
+  sha256 'f39c51f3ee55f30eecff5b4a9fa6fc097343cfbff255399f8e1c23a353aace33'
 
   url "https://developers.yubico.com/YubiHSM2/Releases/yubihsm2-sdk-#{version}-darwin-amd64.tar.gz"
   name 'Yubico YubiHSM 2 SDK'
