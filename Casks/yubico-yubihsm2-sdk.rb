@@ -1,14 +1,20 @@
 cask 'yubico-yubihsm2-sdk' do
-  version '2019-12'
-  sha256 'f39c51f3ee55f30eecff5b4a9fa6fc097343cfbff255399f8e1c23a353aace33'
+  version '2020-10'
+  sha256 '4b6f10255a5af09df0ef042610a6323a352761cb9ddf3c05499c4acc848e95d6'
 
-  url "https://developers.yubico.com/YubiHSM2/Releases/yubihsm2-sdk-#{version}-darwin-amd64.tar.gz"
+  url "https://developers.yubico.com/YubiHSM2/Releases/yubihsm2-sdk-#{version}-darwin-amd64.pkg"
   name 'Yubico YubiHSM 2 SDK'
+  desc 'SDK and operational software for Yubico YubiHSM 2'
   homepage 'https://developers.yubico.com/YubiHSM2/'
 
-  binary 'yubihsm2-sdk/bin/yubihsm-connector'
-  binary 'yubihsm2-sdk/bin/yubihsm-setup'
-  binary 'yubihsm2-sdk/bin/yubihsm-shell'
-  binary 'yubihsm2-sdk/bin/yubihsm-wrap'
+  livecheck do
+    url "https://developers.yubico.com/YubiHSM2/Releases/"
+    strategy :page_match
+    regex(/yubihsm2-sdk-(\d{4}-\d{2}[a-z]?)-darwin-amd64/i)
+  end
+
+  pkg "yubihsm2-sdk-#{version}-darwin-amd64.pkg"
+
+  uninstall pkgutil: "com.yubico.yubihsm2-sdk"
 
 end
