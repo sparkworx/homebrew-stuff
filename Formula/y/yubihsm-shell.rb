@@ -1,14 +1,12 @@
 class YubihsmShell < Formula
   desc "Yubico YubiHSM shell and libraries"
   homepage "https://developers.yubico.com/yubihsm-shell/"
-  url "https://github.com/Yubico/yubihsm-shell/archive/refs/tags/2.7.0.tar.gz"
-  sha256 "7c08068971d4047767034c5f83743c7a33b5d4c95e8adcb9083f1a8371df34b9"
+  url "https://github.com/Yubico/yubihsm-shell/archive/refs/tags/2.7.1.tar.gz"
+  sha256 "79bbca1b4f4b0208350d68a0e789c41047174ba6eb7219d973434e292b1fed92"
   license "Apache-2.0"
 
-  depends_on "check" => :build
   depends_on "cmake" => :build
   depends_on "gengetopt" => :build
-  depends_on "gnu-getopt" => :build
   depends_on "help2man" => :build
   depends_on "pkgconf" => :build
   depends_on "libusb"
@@ -16,7 +14,6 @@ class YubihsmShell < Formula
 
   uses_from_macos "curl"
   uses_from_macos "pcsc-lite"
-  uses_from_macos "zlib"
 
   def install
     ENV.append_to_cflags "-I#{Formula["pcsc-lite"].opt_include}/PCSC" unless OS.mac?
@@ -24,6 +21,14 @@ class YubihsmShell < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+  end
+
+  def caveats
+    <<~EOS
+      This formula may conflict with the yubihsm2-sdk cask, which installs
+      the same components via Yubico's installer package. If you have the
+      cask installed, run: brew uninstall --cask yubihsm2-sdk
+    EOS
   end
 
   test do
