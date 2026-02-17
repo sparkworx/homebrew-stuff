@@ -34,9 +34,7 @@ cask "oracle-instant-client-basic@19" do
 
   preflight do
     system_command "/bin/mkdir", args: ["-p", ic_dir], sudo: true
-    system_command "/bin/bash",
-                   args: ["-c", "/usr/sbin/chown $(stat -f '%Su:%Sg' '#{HOMEBREW_PREFIX}') '#{ic_dir}'"],
-                   sudo: true
+    system_command "/usr/sbin/chown", args: ["#{Process.uid}:#{Process.gid}", ic_dir], sudo: true
     system_command "/bin/mkdir", args: ["-p", "#{ic_dir}/network/admin"]
   end
 
@@ -66,7 +64,7 @@ cask "oracle-instant-client-basic@19" do
   end
 
   uninstall_postflight do
-    system_command "/usr/bin/find", args: [ic_dir, "-type", "d", "-empty", "-delete"]
+    system_command "/usr/bin/find", args: [ic_dir, "-type", "d", "-empty", "-delete"], sudo: true
   end
 
   zap trash: [ic_dir],
