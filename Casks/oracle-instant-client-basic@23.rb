@@ -38,10 +38,10 @@ IC_BASIC_LIBS = %w[
 IC_BASIC_JARS = %w[ojdbc8.jar ojdbc11.jar ucp.jar xstreams.jar].freeze
 
 cask "oracle-instant-client-basic@23" do
-  version "23.3.0.23.09"
-  sha256 "ff6fcfb8e2a231a9e0eae858691fe854451b375e654adf4a62331981a60e9569"
+  version "23.26.1.0.0"
+  sha256 "5dc67a7e1cccd0a01d5bf53d7cf13b56f00999e3c2c1a309d8600cd766d80b41"
 
-  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}0#{version.to_s.split('.')[3]}/instantclient-basic-macos.arm64-#{version}-2.dmg"
+  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split('.')[2]}00/instantclient-basic-macos.arm64-#{version}.dmg"
   name "Oracle Instant Client Basic (ARM)"
   desc "Oracle database client libraries for OCI, OCCI, and JDBC-OCI applications"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"

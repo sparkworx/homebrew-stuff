@@ -1,8 +1,8 @@
 cask "oracle-instant-client-sdk@23" do
-  version "23.3.0.23.09"
-  sha256 "3deadfce089eb6b9c091b1fd213ed7a66685bb22643c7c74be5e050ad8cfccbb"
+  version "23.26.1.0.0"
+  sha256 "6a101a8c6651a76055a3222b1860dcdabdc7c14c82759daa8ca11c5d13c8d1eb"
 
-  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}0#{version.to_s.split('.')[3]}/instantclient-sdk-macos.arm64-#{version}.dmg"
+  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split('.')[2]}00/instantclient-sdk-macos.arm64-#{version}.dmg"
   name "Oracle Instant Client SDK (ARM)"
   desc "Oracle Instant Client headers and makefiles for development"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
