@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/safishamsi/graphify"
-  url "https://files.pythonhosted.org/packages/8d/59/4da66c27682151fc115dc07ddd1aa897ba0f17ff5d5d8c1b8438e5c38b3f/graphifyy-0.8.40.tar.gz"
-  sha256 "29929283a07b687a4a7f84fac0e38fcfa11cbe46b3adde2bfccf6a9cb61413e1"
+  url "https://files.pythonhosted.org/packages/b6/35/fa72927545b34f3e978ad361dcc87043edd127b298861f0f6d54c753e3b5/graphifyy-0.8.44.tar.gz"
+  sha256 "bd0bd48421ddab2db1fabc833e3f1f414cd5a85d0825f47274331a23ef4dcfca"
   license "MIT"
 
   livecheck do
@@ -23,8 +23,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/1b/b7/9a8e2f79011e89dd6eeb599c27332aed765dac9d6fbee3a55e68e4e3ec25/anthropic-0.109.2.tar.gz"
-    sha256 "d37db299597c7bc124b49b767ff135f1e6456b64af2b2fad4b63b2a1df333cf0"
+    url "https://files.pythonhosted.org/packages/b9/8a/9afc7305a2ce4b52b30e137f83cd2a6a90b918b3997073db11bb5a1de55a/anthropic-0.111.0.tar.gz"
+    sha256 "39cbda0ac17a6d423e5bf609811bd69b26eddf6299d7a468126e05bc711ce826"
   end
 
   resource "anyio" do
@@ -148,8 +148,8 @@ class Graphify < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/07/60/1d1e59c9c90d54591469ada7d268251f71c24bdb765f1a8a832cee8c6653/pydantic_settings-2.14.1.tar.gz"
-    sha256 "e874d3bec7e787b0c9958277956ed9b4dd5de6a80e162188fdaff7c5e26fd5fa"
+    url "https://files.pythonhosted.org/packages/5c/b5/8f48e906c3e0205276e8bd8cb7512217a87b2685304d64be27cad5b3019f/pydantic_settings-2.14.2.tar.gz"
+    sha256 "c19dd64b19097f1de80184f0cc7b0272a13ae6e170cbf240a3e27e381ed14a5f"
   end
 
   resource "pyjwt" do
@@ -402,6 +402,12 @@ class Graphify < Formula
 
         uv tool install 'graphifyy[all]'
         pipx install 'graphifyy[neo4j,video]'
+
+      After upgrading, reinstall the graphify skill into any agents so the
+      bundled skill matches the new version (otherwise graphify warns that
+      the skill is from an older release):
+
+        graphify install
     EOS
   end
 
