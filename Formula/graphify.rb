@@ -3,10 +3,9 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/safishamsi/graphify"
-  url "https://files.pythonhosted.org/packages/b6/35/fa72927545b34f3e978ad361dcc87043edd127b298861f0f6d54c753e3b5/graphifyy-0.8.44.tar.gz"
-  sha256 "bd0bd48421ddab2db1fabc833e3f1f414cd5a85d0825f47274331a23ef4dcfca"
+  url "https://files.pythonhosted.org/packages/1c/52/7e5cc2cd66d9181dc5606b111bddc24af2a1159f839109410d421cec1fcf/graphifyy-0.8.46.tar.gz"
+  sha256 "ef4cc38086d53d3de8ba8b78ff38664b2380f9940eabf136bf0556fbf67804fb"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -145,8 +144,8 @@ class Graphify < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d0/ad/fed0499ce6a338d2a03ebae59cd15093910c8875328855781952abf6c2fe/numpy-2.4.6.tar.gz"
-    sha256 "f3a3570c4a2a16746ac2c31a7c7c7b0c186b95ce902e33db6f28094ed7387dda"
+    url "https://files.pythonhosted.org/packages/e7/05/3d27272d30698dc0ecb7fdfaa41ad70303b444f81722bb99bce1d818638a/numpy-2.5.0.tar.gz"
+    sha256 "5a129578019311b6e56bdd714250f19b518f7dceeeb8d1af5490f4942d3f891c"
   end
 
   resource "openai" do
@@ -220,8 +219,8 @@ class Graphify < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/f7/2b/58abc2d1fd397e7dde08e947e05c884d8ef2f78d5e2588c17a12d42d6994/sse_starlette-3.4.4.tar.gz"
-    sha256 "07e0fa0460138baf25cdd5fb28683472c3995dc1642225191b3832d62526bcb0"
+    url "https://files.pythonhosted.org/packages/d2/1b/bc9e3e7a72dcdad7dc7888758f5d00f56f8909ed5cfdff822bd72bb4c520/sse_starlette-3.4.5.tar.gz"
+    sha256 "83072538bc211a2f68b7b0422226c4af3e9b62e106e07034664b832ca019842a"
   end
 
   resource "starlette" do
@@ -904,7 +903,7 @@ class Graphify < Formula
 
     # cryptography's Rust (openssl-sys) build links against Homebrew openssl@3;
     # point it there explicitly and forbid the vendored-OpenSSL fallback.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     # Source resources (sdists) are compiled from source by virtualenv's pip_install.
@@ -913,7 +912,7 @@ class Graphify < Formula
     # wheel directly. Drive pip from the Homebrew python interpreter (the venv is built
     # without pip and, with system_site_packages disabled, can't borrow the system one),
     # targeting the venv via --python.
-    brew_python = Formula["python@3.13"].opt_bin/"python3.13"
+    brew_python = formula_opt_bin("python@3.13")/"python3.13"
     wheels, sdists = resources.partition { |r| r.url.end_with?(".whl") }
 
     # On macOS, cryptography is built from source and its Rust build runs
