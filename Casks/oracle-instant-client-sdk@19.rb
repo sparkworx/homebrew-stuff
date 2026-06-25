@@ -15,11 +15,13 @@ cask "oracle-instant-client-sdk@19" do
   artifact "sdk", target: "#{ic_dir}/sdk"
 
   postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
     system_command "/bin/ln", args: ["-sfn", "#{ic_dir}/sdk/include", "#{HOMEBREW_PREFIX}/include/oracle"]
     system_command "/bin/mkdir", args: ["-p", "#{HOMEBREW_PREFIX}/share/oracle/sdk"]
     system_command "/bin/ln", args: ["-sfn", "#{ic_dir}/sdk/demo", "#{HOMEBREW_PREFIX}/share/oracle/sdk/demo"]
     system_command "/bin/ln", args: ["-sfn", "#{ic_dir}/sdk/admin", "#{HOMEBREW_PREFIX}/share/oracle/sdk/admin"]
-    system_command "/bin/ln", args: ["-sf", "#{ic_dir}/sdk/ottclasses.zip", "#{HOMEBREW_PREFIX}/share/oracle/sdk/ottclasses.zip"]
+    system_command "/bin/ln",
+                   args: ["-sf", "#{ic_dir}/sdk/ottclasses.zip", "#{HOMEBREW_PREFIX}/share/oracle/sdk/ottclasses.zip"]
     system_command "/bin/ln", args: ["-sf", "#{ic_dir}/sdk/ott", "#{HOMEBREW_PREFIX}/bin/ott"]
   end
 
@@ -31,5 +33,5 @@ cask "oracle-instant-client-sdk@19" do
     system_command "/bin/rm", args: ["-f", "#{HOMEBREW_PREFIX}/bin/ott"]
   end
 
-  zap rmdir: ["#{HOMEBREW_PREFIX}/share/oracle/sdk"]
+  zap rmdir: "#{HOMEBREW_PREFIX}/share/oracle/sdk"
 end

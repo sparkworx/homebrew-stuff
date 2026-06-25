@@ -32,17 +32,18 @@ cask "oracle-instant-client-basic@19" do
 
   ic_dir = "#{HOMEBREW_PREFIX}/instantclient_#{version.major}"
 
+  artifact "network/admin/README", target: "#{ic_dir}/network/admin/README"
+
+  IC_BASIC_BINS.each { |bin| artifact bin, target: "#{ic_dir}/#{bin}" }
+  IC_BASIC_LIBS.each { |lib| artifact lib, target: "#{ic_dir}/#{lib}" }
   preflight do
     system_command "/bin/mkdir", args: ["-p", ic_dir], sudo: true
     system_command "/usr/sbin/chown", args: ["#{Process.uid}:#{Process.gid}", ic_dir], sudo: true
     system_command "/bin/mkdir", args: ["-p", "#{ic_dir}/network/admin"]
   end
 
-  IC_BASIC_BINS.each { |bin| artifact bin, target: "#{ic_dir}/#{bin}" }
-  IC_BASIC_LIBS.each { |lib| artifact lib, target: "#{ic_dir}/#{lib}" }
-  artifact "network/admin/README", target: "#{ic_dir}/network/admin/README"
-
   postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
     IC_BASIC_BINS.each do |bin|
       system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{bin}", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
     end
@@ -67,6 +68,6 @@ cask "oracle-instant-client-basic@19" do
     system_command "/usr/bin/find", args: [ic_dir, "-type", "d", "-empty", "-delete"], sudo: true
   end
 
-  zap trash: [ic_dir],
-      rmdir: ["#{HOMEBREW_PREFIX}/share/oracle"]
+  zap trash: ic_dir,
+      rmdir: "#{HOMEBREW_PREFIX}/share/oracle"
 end

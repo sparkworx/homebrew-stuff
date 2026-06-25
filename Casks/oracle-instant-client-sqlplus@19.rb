@@ -20,6 +20,7 @@ cask "oracle-instant-client-sqlplus@19" do
   artifact "glogin.sql", target: "#{ic_dir}/glogin.sql"
 
   postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
     IC_SQLPLUS_BINS.each do |bin|
       system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{bin}", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
     end
