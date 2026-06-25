@@ -5,7 +5,7 @@ cask "oracle-instant-client-sqlplus@23" do
   version "23.26.1.0.0"
   sha256 "db973a9d2a672b462333feda091c8b2e2defe7aa2a2f4b266a8f36ee356d979e"
 
-  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split('.')[2]}00/instantclient-sqlplus-macos.arm64-#{version}.dmg"
+  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split(".")[2]}00/instantclient-sqlplus-macos.arm64-#{version}.dmg"
   name "Oracle Instant Client SQLPlus (ARM)"
   desc "Oracle SQL*Plus command-line interface for Oracle Database"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
@@ -20,6 +20,7 @@ cask "oracle-instant-client-sqlplus@23" do
   artifact "glogin.sql", target: "#{ic_dir}/glogin.sql"
 
   postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
     IC_SQLPLUS_BINS.each do |bin|
       system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{bin}", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
     end

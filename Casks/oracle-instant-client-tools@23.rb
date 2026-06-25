@@ -5,7 +5,7 @@ cask "oracle-instant-client-tools@23" do
   version "23.26.1.0.0"
   sha256 "76587115ec6aa691ce44ab41b11febee72e13fb49b4d03225fb52776c7c38e34"
 
-  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split('.')[2]}00/instantclient-tools-macos.arm64-#{version}.dmg"
+  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split(".")[2]}00/instantclient-tools-macos.arm64-#{version}.dmg"
   name "Oracle Instant Client Tools (ARM)"
   desc "Oracle Data Pump, SQL*Loader, and Workload Replay Client"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
@@ -19,6 +19,7 @@ cask "oracle-instant-client-tools@23" do
   IC_TOOLS_LIBS.each { |lib| artifact lib, target: "#{ic_dir}/#{lib}" }
 
   postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
     IC_TOOLS_BINS.each do |bin|
       system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{bin}", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
     end

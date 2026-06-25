@@ -41,7 +41,7 @@ cask "oracle-instant-client-basic@23" do
   version "23.26.1.0.0"
   sha256 "5dc67a7e1cccd0a01d5bf53d7cf13b56f00999e3c2c1a309d8600cd766d80b41"
 
-  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split('.')[2]}00/instantclient-basic-macos.arm64-#{version}.dmg"
+  url "https://download.oracle.com/otn_software/mac/instantclient/#{version.major}#{version.minor}#{version.to_s.split(".")[2]}00/instantclient-basic-macos.arm64-#{version}.dmg"
   name "Oracle Instant Client Basic (ARM)"
   desc "Oracle database client libraries for OCI, OCCI, and JDBC-OCI applications"
   homepage "https://www.oracle.com/database/technologies/instant-client.html"
@@ -50,18 +50,19 @@ cask "oracle-instant-client-basic@23" do
 
   ic_dir = "#{HOMEBREW_PREFIX}/instantclient_#{version.major}"
 
+  artifact "network/admin/README", target: "#{ic_dir}/network/admin/README"
+
+  IC_BASIC_BINS.each { |bin| artifact bin, target: "#{ic_dir}/#{bin}" }
+  IC_BASIC_LIBS.each { |lib| artifact lib, target: "#{ic_dir}/#{lib}" }
+  IC_BASIC_JARS.each { |jar| artifact jar, target: "#{ic_dir}/#{jar}" }
   preflight do
     system_command "/bin/mkdir", args: ["-p", ic_dir], sudo: true
     system_command "/usr/sbin/chown", args: ["#{Process.uid}:#{Process.gid}", ic_dir], sudo: true
     system_command "/bin/mkdir", args: ["-p", "#{ic_dir}/network/admin"]
   end
 
-  IC_BASIC_BINS.each { |bin| artifact bin, target: "#{ic_dir}/#{bin}" }
-  IC_BASIC_LIBS.each { |lib| artifact lib, target: "#{ic_dir}/#{lib}" }
-  IC_BASIC_JARS.each { |jar| artifact jar, target: "#{ic_dir}/#{jar}" }
-  artifact "network/admin/README", target: "#{ic_dir}/network/admin/README"
-
   postflight do
+    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
     IC_BASIC_BINS.each do |bin|
       system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{bin}", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
     end
@@ -86,6 +87,6 @@ cask "oracle-instant-client-basic@23" do
     system_command "/usr/bin/find", args: [ic_dir, "-type", "d", "-empty", "-delete"], sudo: true
   end
 
-  zap trash: [ic_dir],
-      rmdir: ["#{HOMEBREW_PREFIX}/share/oracle"]
+  zap trash: ic_dir,
+      rmdir: "#{HOMEBREW_PREFIX}/share/oracle"
 end
