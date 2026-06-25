@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/safishamsi/graphify"
-  url "https://files.pythonhosted.org/packages/1c/52/7e5cc2cd66d9181dc5606b111bddc24af2a1159f839109410d421cec1fcf/graphifyy-0.8.46.tar.gz"
-  sha256 "ef4cc38086d53d3de8ba8b78ff38664b2380f9940eabf136bf0556fbf67804fb"
+  url "https://files.pythonhosted.org/packages/f7/e7/68117ff3eddafd81c470a7ec6f9cfeb7f95e326dc33b74e5ab960980c74a/graphifyy-0.8.47.tar.gz"
+  sha256 "502d02c922599e0abbc10dbed3d3d427ddd614804dff4a5d979cc916f3e6d522"
   license "MIT"
 
   livecheck do
@@ -25,13 +25,13 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/b9/8a/9afc7305a2ce4b52b30e137f83cd2a6a90b918b3997073db11bb5a1de55a/anthropic-0.111.0.tar.gz"
-    sha256 "39cbda0ac17a6d423e5bf609811bd69b26eddf6299d7a468126e05bc711ce826"
+    url "https://files.pythonhosted.org/packages/7b/dd/808c144d4a883fcfd12fe0d7689b1d86bbbea6666c1cc957ad19f1017c22/anthropic-0.112.0.tar.gz"
+    sha256 "e180cd91aa5b9b32e4007fe69892ab128d8a86b9f90825103b1903fbc977d0af"
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/1c/b5/001890774a9552aff22502b8da382593109ce0c95314abaebbb116567545/anyio-4.14.0.tar.gz"
-    sha256 "b47c1f9ccf73e67021df785332508f99379c68fa7d0684e8e3492cb1d4b23f89"
+    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
+    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
   end
 
   resource "attrs" do
@@ -55,8 +55,8 @@ class Graphify < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/9b/98/518d8e5081007684232226f475082b30087d0f585e8457db087298259f49/click-8.4.1.tar.gz"
-    sha256 "918b5633eddf6b41c32d4f454bf0de810065c74e3f7dbf8ee5452f8be88d3e96"
+    url "https://files.pythonhosted.org/packages/76/d4/81420972a676e8ffea40450d8c8c92943e7218a78fe9b64359836cc9876b/click-8.4.2.tar.gz"
+    sha256 "9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6"
   end
 
   # cryptography: source on macOS, prebuilt manylinux wheel on Linux.
@@ -149,8 +149,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/f3/fa/88d0c58a0c58df7e6758e66b99c5d028d5e0bb49f8812d7203940cd9dbf1/openai-2.43.0.tar.gz"
-    sha256 "e74d238200a26868977002190fb6631613480a93dfe0c9c982e77021ed60a017"
+    url "https://files.pythonhosted.org/packages/49/f5/7c7cb955305cb41f7f3c5fd7e0e38bf6bbf2658468863d4b7b868a5cb8df/openai-2.44.0.tar.gz"
+    sha256 "68a5a5ffad82b8ff7d451c437529fb64f7c3b8123aaf0c021966a882d9e3947d"
   end
 
   resource "pycparser" do
