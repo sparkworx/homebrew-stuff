@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/safishamsi/graphify"
-  url "https://files.pythonhosted.org/packages/f7/e7/68117ff3eddafd81c470a7ec6f9cfeb7f95e326dc33b74e5ab960980c74a/graphifyy-0.8.47.tar.gz"
-  sha256 "502d02c922599e0abbc10dbed3d3d427ddd614804dff4a5d979cc916f3e6d522"
+  url "https://files.pythonhosted.org/packages/1a/38/f1709d93e610a85ca2872aa808e7acb951f98c33733e73fee5ed0fdbdf09/graphifyy-0.8.50.tar.gz"
+  sha256 "7da65f1fd47476dd73ff6fdb7746f616b328c9e737466f85bdc4cfb14f5c8fb7"
   license "MIT"
 
   livecheck do
@@ -134,8 +134,8 @@ class Graphify < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/c1/ee/94c6c50ffc5b5cf4737052275d11b57367f32d1a8516e31dcd60591b3916/mcp-1.28.0.tar.gz"
-    sha256 "559d3f9943674cafbe5744c5d3794f3237e8b47f9bbc58e20c0fad680d8487c2"
+    url "https://files.pythonhosted.org/packages/6e/77/9450b8f251a13affb6281997d0523c4615f8a8b35d0b21ff30db3a5aac9d/mcp-1.28.1.tar.gz"
+    sha256 "d51e36a5f5644faea4f85ea649bfffa6bc6c26770d42798ad6a3de3d2ba69683"
   end
 
   resource "networkx" do
