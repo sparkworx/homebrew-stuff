@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/safishamsi/graphify"
-  url "https://files.pythonhosted.org/packages/1a/38/f1709d93e610a85ca2872aa808e7acb951f98c33733e73fee5ed0fdbdf09/graphifyy-0.8.50.tar.gz"
-  sha256 "7da65f1fd47476dd73ff6fdb7746f616b328c9e737466f85bdc4cfb14f5c8fb7"
+  url "https://files.pythonhosted.org/packages/61/1e/8551642d3323792ff732d3c301fdba1afeceb20a1e98106c527b8ee5c9fa/graphifyy-0.9.3.tar.gz"
+  sha256 "ae76ba4dd3558d0067aa2618992ede8127526bab8aa2e6f7417d94439891328c"
   license "MIT"
 
   livecheck do
@@ -17,7 +17,7 @@ class Graphify < Formula
   depends_on "ninja" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
@@ -25,8 +25,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/7b/dd/808c144d4a883fcfd12fe0d7689b1d86bbbea6666c1cc957ad19f1017c22/anthropic-0.112.0.tar.gz"
-    sha256 "e180cd91aa5b9b32e4007fe69892ab128d8a86b9f90825103b1903fbc977d0af"
+    url "https://files.pythonhosted.org/packages/01/52/b9022707a25fd263b8ff5e11f480dcc9cd6da0a380c486e5be053c01d995/anthropic-0.115.0.tar.gz"
+    sha256 "6bb25184441d51544f8bc9877a7efbddd9bc4a6207cce898536d84b233310f4a"
   end
 
   resource "anyio" do
@@ -119,8 +119,8 @@ class Graphify < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/66/b5/55f06bb281d92fb3cc86d14e1def2bd908bb77693183e7cb1f5a3c388b0c/jiter-0.15.0.tar.gz"
-    sha256 "4251acc80e2b7c9b7b8823456ea0fceeb0734dac2df7636d3c711b38476b5a76"
+    url "https://files.pythonhosted.org/packages/1d/1f/10936e16d8860c70698a1aa939a46aa0224813b782bce4e000e637da0b2d/jiter-0.16.0.tar.gz"
+    sha256 "7b24c3492c5f4f84a37946ad9cf504910cf6a782d6a4e0689b6673c5894b4a1c"
   end
 
   resource "jsonschema" do
@@ -199,8 +199,8 @@ class Graphify < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/dc/0e/49aee608ad09480e7fd276898c99ec6192985fa331abe4eb3a986094490b/regex-2026.5.9.tar.gz"
-    sha256 "a8234aa23ec39894bfe4a3f1b85616a7032481964a13ac6fc9f10de4f6fca270"
+    url "https://files.pythonhosted.org/packages/f1/05/e4f219230e11e774a6c9987d2ab0d0c6b8573e13a17e143d0015bee710ef/regex-2026.6.28.tar.gz"
+    sha256 "3cb4b6c5cb3060cc31efdc1fbb27c25fb9b29044afd87e40601a1c4d9db54342"
   end
 
   resource "requests" do
@@ -209,8 +209,8 @@ class Graphify < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/2e/43/25a8dcd3feedd735039a8f0b5b7e3b118232b5eae288c4fd9ab200d41094/rpds_py-2026.5.1.tar.gz"
-    sha256 "07b24fea40541e28570e5b795a4a38fbdcd12550c06bd0748005ecc8116ca256"
+    url "https://files.pythonhosted.org/packages/aa/2a/9618a122aeb2a169a28b03889a2995fe297588964333d4a7d67bdf46e147/rpds_py-2026.6.3.tar.gz"
+    sha256 "1cebd1337c242e4ec2293e541f712b2da849b29f48f0c293684b71c0632625d4"
   end
 
   resource "sniffio" do
@@ -899,7 +899,7 @@ class Graphify < Formula
     # vendored as a resource, and pip's build isolation supplies the build
     # backends (setuptools/maturin/etc.), so the leak isn't needed and removing
     # it keeps graphify from importing unrelated Homebrew-installed packages.
-    venv = virtualenv_create(libexec, "python3.13", system_site_packages: false)
+    venv = virtualenv_create(libexec, "python3.14", system_site_packages: false)
 
     # cryptography's Rust (openssl-sys) build links against Homebrew openssl@3;
     # point it there explicitly and forbid the vendored-OpenSSL fallback.
@@ -912,7 +912,7 @@ class Graphify < Formula
     # wheel directly. Drive pip from the Homebrew python interpreter (the venv is built
     # without pip and, with system_site_packages disabled, can't borrow the system one),
     # targeting the venv via --python.
-    brew_python = formula_opt_bin("python@3.13")/"python3.13"
+    brew_python = formula_opt_bin("python@3.14")/"python3.14"
     wheels, sdists = resources.partition { |r| r.url.end_with?(".whl") }
 
     # On macOS, cryptography is built from source and its Rust build runs
