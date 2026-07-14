@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/safishamsi/graphify"
-  url "https://files.pythonhosted.org/packages/2c/da/29400b3587221a601fc18aed33dcd7321d052a85ea0e4358df5695dd08bc/graphifyy-0.9.11.tar.gz"
-  sha256 "603623a208d0f6017800973cb812b412df4ec8e36ac6835fd60bfb60f2a683f0"
+  url "https://files.pythonhosted.org/packages/d8/bf/39d44057c93ac2c8896e9fbf3601ba7419f19d65753884c698bf5e491b25/graphifyy-0.9.15.tar.gz"
+  sha256 "48741d332ca910b072e10b5e75d9281d69ac86dabed31b03f56bb94b60b0c368"
   license "MIT"
 
   livecheck do
@@ -30,8 +30,8 @@ class Graphify < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/3b/72/5562aabb8dd7181e8e860622a38bea08d17842b99ecd4c91f84ac95251b0/anyio-4.14.1.tar.gz"
-    sha256 "8d648a3544c1a700e3ff78615cd679e4c5c3f149904287e73687b2596963629e"
+    url "https://files.pythonhosted.org/packages/61/cc/a381afa6efea9f496eff839d4a6a1aed3bfafc7b3ab4b0d1b243a12573dd/anyio-4.14.2.tar.gz"
+    sha256 "cfa139f3ed1a23ee8f88a145ddb5ac7605b8bbfd8592baacd7ce3d8bb4313c7f"
   end
 
   resource "attrs" do
@@ -199,8 +199,8 @@ class Graphify < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/f1/05/e4f219230e11e774a6c9987d2ab0d0c6b8573e13a17e143d0015bee710ef/regex-2026.6.28.tar.gz"
-    sha256 "3cb4b6c5cb3060cc31efdc1fbb27c25fb9b29044afd87e40601a1c4d9db54342"
+    url "https://files.pythonhosted.org/packages/7b/37/451aaddbf50922f34d744ad5ca919ae1fcfac112123885d9728f52a484b3/regex-2026.7.10.tar.gz"
+    sha256 "1050fedf0a8a92e843971120c2f57c3a99bea86c0dfa1d63a9fac053fe54b135"
   end
 
   resource "requests" do
