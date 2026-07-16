@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/safishamsi/graphify"
-  url "https://files.pythonhosted.org/packages/d8/bf/39d44057c93ac2c8896e9fbf3601ba7419f19d65753884c698bf5e491b25/graphifyy-0.9.15.tar.gz"
-  sha256 "48741d332ca910b072e10b5e75d9281d69ac86dabed31b03f56bb94b60b0c368"
+  url "https://files.pythonhosted.org/packages/f2/9f/fa143fd295a552df9a765a500edeaea1631bf321b5b032f0e47d3455d17f/graphifyy-0.9.17.tar.gz"
+  sha256 "450b509e0811c084ecc68201e192d82f659dcab4b8028b4aece8584e9e79e899"
   license "MIT"
 
   livecheck do
