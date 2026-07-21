@@ -2,10 +2,11 @@ class Graphify < Formula
   include Language::Python::Virtualenv
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
-  homepage "https://github.com/safishamsi/graphify"
+  homepage "https://github.com/Graphify-Labs/graphify"
   url "https://files.pythonhosted.org/packages/1b/cc/dfd0c049031b789525cecae649f6ca0be6a8fb7a8abd6b57a3561ab1f433/graphifyy-0.9.23.tar.gz"
   sha256 "b0ff6d1452b8dc69d6df270d486a3a0f9d990a0e21de9cec45fe243004ffbd14"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -621,6 +622,29 @@ class Graphify < Formula
     end
   end
 
+  resource "tree-sitter-pascal" do
+    on_macos do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/7e/1e/06f87ce971119b6a6c1682a0647cad9774463ae9c68faa8c016d8c10d30f/tree_sitter_pascal-0.11.0-cp38-abi3-macosx_11_0_arm64.whl"
+        sha256 "ed50bb16a8469a54ae365f51dac046a3247e2efbab203269a8d737fa816b11a6"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/1e/36/8660f400b1c42714f345fc0afae295be2fafec51531d199b7c6e2387881e/tree_sitter_pascal-0.11.0-cp38-abi3-macosx_10_9_x86_64.whl"
+        sha256 "bccb2d757c17820cdcfaa760bac1df4caa6278e1e2334d6956e0f9c31c6e8f4a"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/20/34/947ae7c72eac8363e3de08f2a1e2f992beeb6afb27daca939443438e4614/tree_sitter_pascal-0.11.0-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+        sha256 "543717086ae596aa1895c6151230e45f78ed20a69b9c1ab83a5d5950db068381"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/aa/81/9e21b0199e86078ca4763ab4bc68fa6e1a3e625e168dee9fdcf27455d09f/tree_sitter_pascal-0.11.0-cp38-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
+        sha256 "ab7557a05400f2841b18d000997453dadff09c2830bd48313cf4264bab018bbe"
+      end
+    end
+  end
+
   resource "tree-sitter-php" do
     on_macos do
       on_arm do
@@ -968,8 +992,8 @@ class Graphify < Formula
     # built from source or vendored as a wheel.
     grammars = %w[
       bash c c_sharp cpp elixir fortran go groovy hcl java javascript json
-      julia kotlin lua objc php powershell python ruby rust scala sql swift
-      typescript verilog zig
+      julia kotlin lua objc pascal php powershell python ruby rust scala sql
+      swift typescript verilog zig
     ]
     system python, "-c", <<~PYTHON
       import importlib
