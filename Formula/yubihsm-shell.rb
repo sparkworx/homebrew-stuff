@@ -1,8 +1,8 @@
 class YubihsmShell < Formula
   desc "Yubico YubiHSM shell and libraries"
   homepage "https://developers.yubico.com/yubihsm-shell/"
-  url "https://github.com/Yubico/yubihsm-shell/archive/refs/tags/2.7.1.tar.gz"
-  sha256 "79bbca1b4f4b0208350d68a0e789c41047174ba6eb7219d973434e292b1fed92"
+  url "https://github.com/Yubico/yubihsm-shell/archive/refs/tags/2.8.0.tar.gz"
+  sha256 "bdc5fdc944b23b357db92815f974aba906fcadd212fe619b6ba282be06b1b3c2"
   license "Apache-2.0"
 
   depends_on "cmake" => :build

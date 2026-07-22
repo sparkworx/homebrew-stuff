@@ -3,8 +3,8 @@ class PythonYubihsm < Formula
 
   desc "Python library and tests for the YubiHSM 2"
   homepage "https://developers.yubico.com/python-yubihsm/"
-  url "https://github.com/Yubico/python-yubihsm/releases/download/3.1.1/yubihsm-3.1.1.tar.gz"
-  sha256 "990c30bf3565d3f2eac88778f88f1fb481dcb826481dbb27510d21d71daea11a"
+  url "https://github.com/Yubico/python-yubihsm/releases/download/3.1.2/yubihsm-3.1.2.tar.gz"
+  sha256 "a2c93c487d40a16f4fb57ef56fa699eab8fbc60f37371143cf1946fbf4670d97"
   license "Apache-2.0"
 
   depends_on "cryptography"
