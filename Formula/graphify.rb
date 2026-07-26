@@ -3,10 +3,9 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/1b/cc/dfd0c049031b789525cecae649f6ca0be6a8fb7a8abd6b57a3561ab1f433/graphifyy-0.9.23.tar.gz"
-  sha256 "b0ff6d1452b8dc69d6df270d486a3a0f9d990a0e21de9cec45fe243004ffbd14"
+  url "https://files.pythonhosted.org/packages/02/27/fd91a31898594363e683864d1e983ce7d77a8a41b990665f8535fb8ac2b3/graphifyy-0.9.26.tar.gz"
+  sha256 "cd0f4917a2ffe1842964be3dd07af67e2a66c97e140dc0f8283301ff2867f854"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -21,13 +20,13 @@ class Graphify < Formula
   depends_on "python@3.14"
 
   resource "annotated-types" do
-    url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
-    sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
+    url "https://files.pythonhosted.org/packages/5f/56/a8120250d128bed162cd73c76d45f6ef9991f3e068f62a8ee060afa3104a/annotated_types-0.8.0.tar.gz"
+    sha256 "13b2beaad985e05e2d6407ee4c4f35590b11f8d693a258a561055cac8f64cab7"
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/41/0d/8f71d535edb0d438f023bd825fb65f67c14fa88a2bd6b75f292a58a63de4/anthropic-0.117.0.tar.gz"
-    sha256 "98107f2b76439641e0ae2a1754087534b8f178dbab99d6eb1bc4b7bc8c744496"
+    url "https://files.pythonhosted.org/packages/92/5c/3331da4fc009d448008a50c78d86cc929e8c937cd1442245ce3f80561c4e/anthropic-0.120.0.tar.gz"
+    sha256 "6ba6007dc9b00365b20f6101a6618f5196ac1ceef81512e4b5cc0e7436d4975d"
   end
 
   resource "anyio" do
@@ -41,8 +40,8 @@ class Graphify < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/c9/c7/424b75da314c1045981bd9777432fad05a9e0c69daa4ed7e308bbaffe405/certifi-2026.6.17.tar.gz"
-    sha256 "024c88eeec92ca068db80f02b8b07c9cef7b9fe261d1d535abfd5abd6f6af432"
+    url "https://files.pythonhosted.org/packages/a3/c2/24167ea9858356b47a87a50d39908bfdb72ceeefe0041586e704e5376b3a/certifi-2026.7.22.tar.gz"
+    sha256 "741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55"
   end
 
   resource "cffi" do
@@ -150,8 +149,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/af/ac/f725c4efbda8657d02be684607e5a2e5ce362e4790fdbcbdfb7c15018647/openai-2.46.0.tar.gz"
-    sha256 "0421e0735ac41451cad894af4cddf0435bfbf8cbc538ac0e15b3c062f2ddc06a"
+    url "https://files.pythonhosted.org/packages/2a/ae/d4d1835488c0350424009dac5095b9a3e173bee12fd2e421ee27e2142c42/openai-2.48.0.tar.gz"
+    sha256 "231b1e7661dda14574986c2f71451e9d584b7fe69e0ee6480e12ed090b48fc16"
   end
 
   resource "pycparser" do
@@ -235,8 +234,8 @@ class Graphify < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz"
-    sha256 "700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b"
+    url "https://files.pythonhosted.org/packages/dd/84/da0e5038228fa34dfd77c5026b173ed035d2a3ba31f1077590c013de2bff/tqdm-4.69.1.tar.gz"
+    sha256 "2be21080a0ce17e902c2f1baeb6a74bf551b67bbdfa4bc0109fad471d0b4cb0d"
   end
 
   # tree-sitter core: source build. Upstream publishes only cp313 (non-abi3)
