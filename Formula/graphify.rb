@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/45/aa/d33c975311e1a4387593125741749e91ffb7273592699481a2090eebac15/graphifyy-0.9.31.tar.gz"
-  sha256 "432bef870132cd3f1b648e128cdec4d1fe1d62ab0246b9d34c679782aaaaad2e"
+  url "https://files.pythonhosted.org/packages/3d/8c/8e2a80ceae6292a655cfffa893109f98a985931d23503fb5d21be8e36e06/graphifyy-0.9.32.tar.gz"
+  sha256 "01665ab841a5d2abc98a4594994cf18747251ef5b496ee52004373dcd098e226"
   license "MIT"
 
   livecheck do
@@ -68,17 +68,17 @@ class Graphify < Formula
   #     chosen for the broadest Linuxbrew compatibility.
   resource "cryptography" do
     on_macos do
-      url "https://files.pythonhosted.org/packages/1f/99/d1c90d6041656cc6ee229dc99cd67fd0cd5aec3c5f7d72fffc27cc750054/cryptography-49.0.0.tar.gz"
-      sha256 "f89660a348f4f78a92366240a61404e337586ef7f5909a2fef59ca88ef505493"
+      url "https://files.pythonhosted.org/packages/de/41/6cbdcf9142d00fe82836fbb51e503e58088575cf7a0fe1dbff6695bf0840/cryptography-50.0.0.tar.gz"
+      sha256 "eeac2acb5a20ed25e0ad6d1df9891a520b78b404266b6d11778f25d5d691a6c9"
     end
     on_linux do
       on_arm do
-        url "https://files.pythonhosted.org/packages/09/41/3797cfaf69cae04a13ee78ebd83f0678d9c02b4779d21ce24445326f1a69/cryptography-49.0.0-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl"
-        sha256 "36d1709f992593689b45bda411498d62c6e365f2ca00b84657d4dadd24de16db"
+        url "https://files.pythonhosted.org/packages/57/ef/8f2df13c7216bcad3e1c74e07f6e193d93e998e114f524a53877c9af27ad/cryptography-50.0.0-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl"
+        sha256 "fd9192b7b70c573d7f214eb1ae35e00d359f6f5e4b27c7e21e30de1fc6204645"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/e6/8b/43011f7ebe515a8aa20d61f290a326cd890c2e738e16e59eaff8d9c3a412/cryptography-49.0.0-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
-        sha256 "0e959b578856a3924bc0cbb710fc12c387b9412a951389f3ca61704a9e25f325"
+        url "https://files.pythonhosted.org/packages/d9/41/029086c34d91052fc3b88bcc8056f709a7c915c7a23b235a54eb800b1c97/cryptography-50.0.0-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+        sha256 "06a32a980526a6ab9a4b9bf8f7385800791e2bb960903cb6b530e4817509a3b7"
       end
     end
   end
@@ -159,8 +159,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/75/d8/06fda9685e47d9a8fc177ef57f8af75207938fad49a45ce23bfa7b6a2a5c/openai-2.51.0.tar.gz"
-    sha256 "4d61287c42eba54086d09346e709cbf7f8cec51822efce9cc399450b9385fba5"
+    url "https://files.pythonhosted.org/packages/79/4b/87a877fd987db5737e43e357ff968e2c04f21be54034507fb38de5e4af99/openai-2.52.1.tar.gz"
+    sha256 "d8f2bf9f0ec8104b171f3448e98baa59a41e26906cf53f5343346d0fa7924d98"
   end
 
   resource "opentelemetry-api" do
@@ -923,8 +923,8 @@ class Graphify < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/05/c8/2d307868453a4bca6e64fa3581d122ae0748a0869c53f159339def179c7c/uvicorn-0.52.0.tar.gz"
-    sha256 "ca8876ad6c1983f394157c168b39d52f6dd56dabf5602fa0982751cffc2293ae"
+    url "https://files.pythonhosted.org/packages/03/18/ccce41535dee1be77735592bd19965f3972c82e07ee703d324709496b716/uvicorn-0.52.1.tar.gz"
+    sha256 "112ec661814189acbccd3f7b86460147cc065fc92c0821afa78918780e4354dd"
   end
 
   def install
