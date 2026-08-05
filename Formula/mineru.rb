@@ -736,13 +736,16 @@ class Mineru < Formula
     # The whole point of the formula is the heavy native stack, so prove it loads
     # rather than just checking the CLI entry point resolves.
     system libexec/"bin/python", "-W", "ignore", "-c", <<~PYTHON
+      import os
       import torch, torchvision, numpy, onnxruntime, transformers, cv2, fasttext
       import mlx.core as mx, mlx_vlm, mineru, mineru_vl_utils
 
       # torch, numpy and cv2 must be the brewed ones, reached via homebrew-deps.pth --
-      # i.e. resolved from the Cellar, not from inside this formula's own venv.
+      # i.e. resolved from the Cellar, not vendored into this formula's own venv.
+      # __file__ reports the opt/ symlink path, so resolve it before comparing.
       for mod in (torch, numpy, cv2):
-          assert "#{HOMEBREW_CELLAR}" in mod.__file__, (mod.__name__, mod.__file__)
+          path = os.path.realpath(mod.__file__)
+          assert path.startswith("#{HOMEBREW_CELLAR}"), (mod.__name__, path)
       assert torch.__version__.startswith("2."), torch.__version__
 
       # torchvision's compiled extension links libtorch -- exercise a real op so an
