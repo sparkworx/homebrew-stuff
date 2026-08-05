@@ -3,9 +3,16 @@ class Mineru < Formula
 
   desc "High-quality PDF/document extraction to Markdown and structured JSON"
   homepage "https://github.com/opendatalab/MinerU"
-  # Upstream publishes no sdist, and the `mineru-3.4.4-released` git tag still carries
-  # __version__ = "3.4.3" (they tagged before bumping mineru/version.py). The PyPI wheel
-  # is the only artifact that actually is 3.4.4, so take it directly.
+  # Upstream publishes no sdist, and their git tags are version-stale: the
+  # `mineru-3.4.4-released` tag still carries __version__ = "3.4.3", because they tag
+  # before bumping mineru/version.py. The PyPI wheel is the only artifact that actually
+  # is 3.4.4, so take it directly.
+  #
+  # ON EVERY VERSION BUMP, re-check whether this is still true:
+  #   curl -sL https://github.com/opendatalab/MinerU/archive/refs/tags/mineru-<v>-released.tar.gz \
+  #     | tar xzO --include='*/mineru/version.py'
+  # If that prints <v>, upstream has fixed their release process and this formula should
+  # move back to the git tag tarball (the idiomatic source) and drop `using: :nounzip`.
   url "https://files.pythonhosted.org/packages/ec/d1/fd23b40d7bbdeaa04a6070ffeb21caff91c2c5a2c5fde22c7ce804f08dd8/mineru-3.4.4-py3-none-any.whl", using: :nounzip
   sha256 "d4d678539782a7683d998e2914a52d96b5720676ce65658b29666b1f4d9dfd13"
   # LicenseRef-MinerU-Open-Source-License: Apache-2.0 plus a commercial-use threshold
@@ -25,18 +32,13 @@ class Mineru < Formula
   depends_on "libyaml"
   depends_on macos: :sonoma
   depends_on "numpy"
+  depends_on "opencv"
   depends_on "python@3.14"
   depends_on "pytorch"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
-  # MinerU declares requires-python ">=3.10,<3.14", as does its own sibling
-  # mineru-vl-utils. That cap is vestigial: it was added 2025-05-09 (PR #2449) after
-  # PyMuPDF failed to build on a 3.14 *alpha*, and MinerU no longer depends on PyMuPDF
-  # at all. Every dependency in the tree resolves and runs on 3.14/arm64. We ignore the
-  # declaration rather than patching it -- mineru-vl-utils ships as a pure wheel whose
-  # metadata a patch cannot reach, and a patch would break the build the day upstream
-  # relaxes the cap, whereas this flag simply becomes a no-op.
+
   resource "accelerate" do
     url "https://files.pythonhosted.org/packages/a8/db/253133d7e7cb40d3af384bb2f5c0b4a2b7fdcffbc95c688cc67a20a3c103/accelerate-1.14.0-py3-none-any.whl"
     sha256 "e94390c2863b873be18f623f9df48a0d8fe5eff13ea7f1a00092b0a7904888c6"
@@ -372,11 +374,6 @@ class Mineru < Formula
     sha256 "c694ffc747a3c4d1663ef2b07b811315a476164ee5efa3a993967349ebca7618"
   end
 
-  resource "opencv-python" do
-    url "https://files.pythonhosted.org/packages/9c/75/76f6ade78f6102c61034f828e2a22616708df2c9504bc8d6af9dd8f73dc5/opencv_python-5.0.0.93-cp37-abi3-macosx_13_0_arm64.whl"
-    sha256 "198a75138241810206a17c829dbcc40a7cb1841cda538ca86cbbfc6c7d95f898"
-  end
-
   resource "openpyxl" do
     url "https://files.pythonhosted.org/packages/c0/da/977ded879c29cbd04de313843e76868e6e13408a94ed6b987245dc7c8506/openpyxl-3.1.5-py2.py3-none-any.whl"
     sha256 "5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2"
@@ -678,23 +675,34 @@ class Mineru < Formula
   end
 
   def install
+    # MinerU declares requires-python ">=3.10,<3.14", as does its own sibling
+    # mineru-vl-utils. That cap is vestigial: it was added 2025-05-09 (PR #2449) after
+    # PyMuPDF failed to build on a 3.14 *alpha*, and MinerU no longer depends on PyMuPDF
+    # at all. Every dependency in the tree resolves and runs on 3.14/arm64. We ignore the
+    # declaration rather than patching it -- mineru-vl-utils ships as a pure wheel whose
+    # metadata a patch cannot reach, and a patch would break the build the day upstream
+    # relaxes the cap, whereas this flag simply becomes a no-op.
     ENV["PIP_IGNORE_REQUIRES_PYTHON"] = "1"
 
     venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install resources
 
-    # torch and numpy come from the pytorch/numpy formulae rather than PyPI wheels:
-    # brewed pytorch is 2.13.0 (satisfies torch>=2.6,<3) and brewed numpy is 2.5.1.
-    # This drops ~520MB from the venv. Verified that PyPI torchvision's compiled ops
+    # torch, numpy and cv2 come from the pytorch/numpy/opencv formulae rather than PyPI
+    # wheels: brewed pytorch is 2.13.0 (satisfies torch>=2.6,<3), numpy is 2.5.1, and
+    # opencv is 5.0.0 (satisfies opencv-python>=4.11). Dropping torch and numpy alone
+    # takes the venv from 1.5GB to 980MB. Verified that PyPI torchvision's compiled ops
     # (e.g. torchvision.ops.nms) dispatch correctly through brewed libtorch.
     #
-    # opencv is deliberately NOT reused: the brewed formula pulls 105 recursive
-    # dependencies (Qt, VTK, FFmpeg, OpenVINO, Tesseract, Boost, HDF5) to replace a
-    # self-contained 48MB wheel.
+    # opencv is the expensive one -- it pulls 105 recursive dependencies (Qt, VTK,
+    # FFmpeg, OpenVINO, Tesseract, Boost, HDF5) to replace a self-contained 48MB wheel.
+    # It is reused here as a deliberate choice because this tap's target machine already
+    # carries most of that tree; if that stops being true, restore the opencv-python
+    # wheel as a resource and drop the opencv dependency.
     site = libexec/"lib/python3.14/site-packages"
     (site/"homebrew-deps.pth").write <<~PTH
       #{formula_opt_libexec("pytorch")}/lib/python3.14/site-packages
       #{formula_opt_lib("numpy")}/python3.14/site-packages
+      #{formula_opt_lib("opencv")}/python3.14/site-packages
     PTH
 
     system libexec/"bin/python", "-m", "pip", "install", "--no-deps", cached_download
@@ -731,8 +739,10 @@ class Mineru < Formula
       import torch, torchvision, numpy, onnxruntime, transformers, cv2, fasttext
       import mlx.core as mx, mlx_vlm, mineru, mineru_vl_utils
 
-      # torch and numpy must be the brewed ones, reached via homebrew-deps.pth.
-      assert "/opt/" in torch.__file__ or "Cellar" in torch.__file__, torch.__file__
+      # torch, numpy and cv2 must be the brewed ones, reached via homebrew-deps.pth --
+      # i.e. resolved from the Cellar, not from inside this formula's own venv.
+      for mod in (torch, numpy, cv2):
+          assert "#{HOMEBREW_CELLAR}" in mod.__file__, (mod.__name__, mod.__file__)
       assert torch.__version__.startswith("2."), torch.__version__
 
       # torchvision's compiled extension links libtorch -- exercise a real op so an
