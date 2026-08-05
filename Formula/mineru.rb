@@ -21,7 +21,7 @@ class Mineru < Formula
   license :cannot_represent
 
   livecheck do
-    url :pypi
+    url :stable
     strategy :pypi
   end
 
@@ -30,6 +30,13 @@ class Mineru < Formula
   # macOS x86_64 wheel at any version.
   depends_on arch: :arm64
   depends_on "libyaml"
+  # `depends_on macos: :sonoma` alone does NOT exclude Linux: MacOSRequirement#satisfy
+  # short-circuits with `next true if version` when OS.mac? is false, so a versioned
+  # macOS dependency reads as "macOS >= 14 (or Linux)". The bare `depends_on :macos` is
+  # what actually makes Linux fail, and it is not redundant here -- the Homebrew/OSDependsOn
+  # cop that flags it reasons about macOS-only *Cask* stanzas and misfires on formulae.
+  # (Homebrew/OSDependsOn will flag the next line as redundant. It is wrong; see above.)
+  depends_on :macos
   depends_on macos: :sonoma
   depends_on "numpy"
   depends_on "opencv"
