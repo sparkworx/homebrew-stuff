@@ -28,16 +28,19 @@ class Mineru < Formula
   # Apple Silicon only, macOS 14+. Every cp314 wheel in this stack (torch, mlx,
   # onnxruntime, torchvision) is tagged macosx_14_0_arm64, and mlx publishes no
   # macOS x86_64 wheel at any version.
+  # cmake and rust are needed to build the Rust/maturin extensions from source; see the
+  # jiter resource for why those cannot be taken as published wheels.
+  depends_on "cmake" => :build
+  depends_on "rust" => :build
+
   depends_on arch: :arm64
   depends_on "libyaml"
   # `depends_on macos: :sonoma` alone does NOT exclude Linux: MacOSRequirement#satisfy
   # short-circuits with `next true if version` when OS.mac? is false, so a versioned
   # macOS dependency reads as "macOS >= 14 (or Linux)". The bare `depends_on :macos` is
-  # what actually makes Linux fail, and it is not redundant here -- the Homebrew/OSDependsOn
-  # cop that flags it reasons about macOS-only *Cask* stanzas and misfires on formulae.
-  # (Homebrew/OSDependsOn will flag the next line as redundant. It is wrong; see above.)
+  # what actually makes Linux fail, so both are needed -- see the on_macos block below
+  # for the form Homebrew wants them declared in.
   depends_on :macos
-  depends_on macos: :sonoma
   depends_on "numpy"
   depends_on "opencv"
   depends_on "python@3.14"
@@ -45,6 +48,13 @@ class Mineru < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
+
+  # Nested inside on_macos because pairing a bare `depends_on :macos` with a versioned
+  # one at the top level is deprecated ("Use `depends_on :macos` with `depends_on macos:`
+  # inside an `on_macos` block instead").
+  on_macos do
+    depends_on macos: :sonoma
+  end
 
   resource "accelerate" do
     url "https://files.pythonhosted.org/packages/a8/db/253133d7e7cb40d3af384bb2f5c0b4a2b7fdcffbc95c688cc67a20a3c103/accelerate-1.14.0-py3-none-any.whl"
@@ -266,9 +276,21 @@ class Mineru < Formula
     sha256 "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
   end
 
+  # jiter, orjson, pydantic-core, safetensors and tokenizers are the Rust/maturin
+  # extensions in this tree, and are the only resources built from source rather than
+  # taken as published cp314 wheels. maturin emits a Rust cdylib -- a Mach-O DYLIB whose
+  # ID is "@rpath/<name>.so", linked without headerpad -- so Homebrew's relocation cannot
+  # expand that ID to the much longer absolute Cellar path, and `brew install` dies with
+  # "Updated load commands do not fit in the header". Homebrew aborts the whole relocation
+  # pass on the first such file, so these surface one at a time; all five are fixed
+  # together here. Building them with -headerpad_max_install_names (see RUSTFLAGS in
+  # install) leaves room for the rewrite. Verified by control: an otherwise identical
+  # source build without that flag fails in exactly the same way.
+  #
+  # hf_xet and onnxruntime are also DYLIBs but relocate fine as wheels -- leave them.
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/65/7a/c415453e5213001bf3b411ff65dec3d303b0e76a4a2cfea9768cd4960994/jiter-0.16.0-cp314-cp314-macosx_11_0_arm64.whl"
-    sha256 "63efadc657488f45db1c676d81e704cac2abf3fdb892def1faea61db053127e2"
+    url "https://files.pythonhosted.org/packages/1d/1f/10936e16d8860c70698a1aa939a46aa0224813b782bce4e000e637da0b2d/jiter-0.16.0.tar.gz"
+    sha256 "7b24c3492c5f4f84a37946ad9cf504910cf6a782d6a4e0689b6673c5894b4a1c"
   end
 
   resource "jmespath" do
@@ -387,8 +409,8 @@ class Mineru < Formula
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/8e/eb/5da01e356015aee6ecfa1187ced87aef51364e306f5e695dd52719bf0e78/orjson-3.11.9-cp314-cp314-macosx_10_15_x86_64.macosx_11_0_arm64.macosx_10_15_universal2.whl"
-    sha256 "b6ef1979adc4bc243523f1a2ba91418030a8e29b0a99cbe7e0e2d6807d4dce6e"
+    url "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz"
+    sha256 "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
   end
 
   resource "packaging" do
@@ -447,8 +469,8 @@ class Mineru < Formula
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/ad/1f/8970b150a4b4365623ae00fc88603491f763c627311ae8031e3111356d6e/pydantic_core-2.46.4-cp314-cp314-macosx_11_0_arm64.whl"
-    sha256 "23ace664830ee0bfe014a0c7bc248b1f7f25ed7ad103852c317624a1083af462"
+    url "https://files.pythonhosted.org/packages/9d/56/921726b776ace8d8f5db44c4ef961006580d91dc52b803c489fafd1aa249/pydantic_core-2.46.4.tar.gz"
+    sha256 "62f875393d7f270851f20523dd2e29f082bcc82292d66db2b64ea71f64b6e1c1"
   end
 
   resource "pydantic-settings" do
@@ -552,8 +574,8 @@ class Mineru < Formula
   end
 
   resource "safetensors" do
-    url "https://files.pythonhosted.org/packages/f5/b1/fa7c600e7dceae12e9606c7578cbc9ff1e1ed55844883ee5c92205e86226/safetensors-0.8.0-cp310-abi3-macosx_11_0_arm64.whl"
-    sha256 "c80201d22cbf405b80647a60ada77bba06c8fba2da2743ba1e89cdcc39a81f25"
+    url "https://files.pythonhosted.org/packages/45/06/f955dbbb1859e3bd23c8ac6141af5106e7ad5fedec4a3a6e3d60f94b7001/safetensors-0.8.0.tar.gz"
+    sha256 "fabaf3e0f18a6618d9b36560682562157f77c2b71fcffc7b432be2baed9d753d"
   end
 
   resource "semantic-version" do
@@ -612,8 +634,8 @@ class Mineru < Formula
   end
 
   resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/2e/47/174dca0502ef88b28f1c9e06b73ce33500eedfac7a7692108aec220464e7/tokenizers-0.22.2-cp39-abi3-macosx_11_0_arm64.whl"
-    sha256 "1e418a55456beedca4621dbab65a318981467a2b188e982a23e117f115ce5001"
+    url "https://files.pythonhosted.org/packages/73/6f/f80cfef4a312e1fb34baf7d85c72d4411afde10978d4657f8cdd811d3ccc/tokenizers-0.22.2.tar.gz"
+    sha256 "473b83b915e547aa366d1eee11806deaf419e17be16310ac0a14077f1e28f917"
   end
 
   resource "tomlkit" do
@@ -691,8 +713,30 @@ class Mineru < Formula
     # relaxes the cap, whereas this flag simply becomes a no-op.
     ENV["PIP_IGNORE_REQUIRES_PYTHON"] = "1"
 
-    venv = virtualenv_create(libexec, "python3.14")
-    venv.pip_install resources
+    # The Rust extensions are built from source (see the jiter resource); Rust does not pick up Homebrew's
+    # linker flags from superenv, so ask cargo for the header padding explicitly.
+    # Without this the resulting dylib ID cannot be relocated and the install fails.
+    ENV["RUSTFLAGS"] = "-C link-arg=-Wl,-headerpad_max_install_names"
+
+    # No system-site-packages: the brewed pytorch/numpy/opencv modules are put on the
+    # path explicitly via homebrew-deps.pth below, so the leak would only risk pulling in
+    # unrelated Homebrew-installed packages.
+    venv = virtualenv_create(libexec, "python3.14", system_site_packages: false)
+
+    # virtualenv's pip_install forces --no-binary=:all:, which rejects wheels, so only
+    # the sdist resources can go through it. Everything else here is a prebuilt wheel and
+    # has to be pip-installed directly from its staged file. Drive pip from the Homebrew
+    # interpreter targeting the venv via --python: the venv is created --without-pip and,
+    # with system-site-packages off, cannot borrow the system one. Same shape as graphify.
+    brew_python = formula_opt_bin("python@3.14")/"python3.14"
+    pip = [brew_python, "-m", "pip", "--python=#{libexec}/bin/python", "install",
+           "--no-deps", "--no-index", "--no-build-isolation"]
+
+    wheels, sdists = resources.partition { |r| r.url.end_with?(".whl") }
+    venv.pip_install sdists
+    wheels.each do |r|
+      r.stage { system(*pip, Dir["*.whl"].first) }
+    end
 
     # torch, numpy and cv2 come from the pytorch/numpy/opencv formulae rather than PyPI
     # wheels: brewed pytorch is 2.13.0 (satisfies torch>=2.6,<3), numpy is 2.5.1, and
@@ -712,7 +756,9 @@ class Mineru < Formula
       #{formula_opt_lib("opencv")}/python3.14/site-packages
     PTH
 
-    system libexec/"bin/python", "-m", "pip", "install", "--no-deps", cached_download
+    # The formula's own url is the PyPI wheel (fetched :nounzip), so it installs the same
+    # way the wheel resources do rather than through pip_install_and_link buildpath.
+    system(*pip, Dir[buildpath/"*.whl"].first)
     bin.install_symlink Dir[libexec/"bin/mineru*"]
   end
 
