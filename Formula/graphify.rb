@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/3d/8c/8e2a80ceae6292a655cfffa893109f98a985931d23503fb5d21be8e36e06/graphifyy-0.9.32.tar.gz"
-  sha256 "01665ab841a5d2abc98a4594994cf18747251ef5b496ee52004373dcd098e226"
+  url "https://files.pythonhosted.org/packages/e5/7d/8e4d5b42135713a4d7ada8ec49a6068150dd00c8707ba1eacaefbe259087/graphifyy-0.9.35.tar.gz"
+  sha256 "a972d4b0ae73b0bbca1b5a56f0053b2a57a99f9b6f5f8437205c8a0d1f1d5f12"
   license "MIT"
 
   livecheck do
@@ -25,8 +25,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/d7/10/4ca013cb166f226bd89e0aeb0fcaff94f45ddf716d4925ce89475d3c587b/anthropic-0.120.2.tar.gz"
-    sha256 "9722efc10c27a30a69f5338ddacdb35bc6a64297a4e4ba729bf83af873d5fb3a"
+    url "https://files.pythonhosted.org/packages/0f/ca/3cb2c20ee729736fbd4546d5d8b67e818288529fe70cb7a80dbf80aef70b/anthropic-0.121.0.tar.gz"
+    sha256 "e79d6e08ab3376602fc9a70d4d5ea3540817c76cf7e16658bed790834e1833d6"
   end
 
   resource "anyio" do
@@ -45,8 +45,8 @@ class Graphify < Formula
   end
 
   resource "cffi" do
-    url "https://files.pythonhosted.org/packages/57/5f/ff100cae70ebe9d8df1c01a00e510e45d9adb5c1fdda84791b199141de97/cffi-2.1.0.tar.gz"
-    sha256 "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9"
+    url "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz"
+    sha256 "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
   end
 
   resource "charset-normalizer" do
@@ -159,8 +159,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/79/4b/87a877fd987db5737e43e357ff968e2c04f21be54034507fb38de5e4af99/openai-2.52.1.tar.gz"
-    sha256 "d8f2bf9f0ec8104b171f3448e98baa59a41e26906cf53f5343346d0fa7924d98"
+    url "https://files.pythonhosted.org/packages/ef/cf/36e3e7235fdf6d125c052acc0970924611b17a20a4fe580596faf4566a65/openai-2.53.0.tar.gz"
+    sha256 "baf5802ad08980e1d9d561e1b996e800c8bcd14af5847c6d0e7a5cc59e4d4116"
   end
 
   resource "opentelemetry-api" do
@@ -224,13 +224,13 @@ class Graphify < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/6c/10/a34c656829ffc1c4b22ef36d70d9ebb6b99c020e2aeb17cee5485099f028/sse_starlette-3.4.6.tar.gz"
-    sha256 "725f8a1bd6d26ae1b2c9610c0ef5065dfdd496f3988d28adcf8c4b49dc25c627"
+    url "https://files.pythonhosted.org/packages/f8/00/b42a44342a054d58cb1115d7c8aa9cb4290dd9442f9c1b91a4b8173dba22/sse_starlette-3.4.8.tar.gz"
+    sha256 "ed89ffbb75cbf78a5fe2f2109cd584792ee7f9dfac96f791db546df8f15f3f9c"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/eb/e3/7c1dc7381d9f8ab7d854328ebfa884e62cb3f3d8549ddfd37c7814f42afa/starlette-1.3.1.tar.gz"
-    sha256 "05d0213193f2fbaae60e2ecb593b4add4262ad4e46536b54abe36f11a71724e0"
+    url "https://files.pythonhosted.org/packages/0f/3c/76d2fd1f1357ed0f0108d8a5aa233dcf16e2946a8559c84912fe08e01ac7/starlette-1.4.1.tar.gz"
+    sha256 "b7332de6e9375593a29ba9eee1e6ecfeb3eb2043e2e19a13b4b71da73ff35540"
   end
 
   resource "tiktoken" do
