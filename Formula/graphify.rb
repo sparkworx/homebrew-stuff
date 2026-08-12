@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/a8/32/5de8a217cd465af1a9e48a4125424e53124fef8ff56454c997fe2131b02e/graphifyy-0.9.38.tar.gz"
-  sha256 "ec2f5ee490156c249f2fd5af7ea11d5ac95f7ee8155ac5889fa78709abd83c3c"
+  url "https://files.pythonhosted.org/packages/df/04/7a5dd380cade64dd31474a6f4b33e7179ec92fbb80047b4fbcd8986894da/graphifyy-0.9.40.tar.gz"
+  sha256 "2268955c1cf36e139577222666481c97d332c3c726314899a11a8696655c2a6a"
   license "MIT"
 
   livecheck do
@@ -159,8 +159,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/ef/cf/36e3e7235fdf6d125c052acc0970924611b17a20a4fe580596faf4566a65/openai-2.53.0.tar.gz"
-    sha256 "baf5802ad08980e1d9d561e1b996e800c8bcd14af5847c6d0e7a5cc59e4d4116"
+    url "https://files.pythonhosted.org/packages/54/8c/2f500e8be09d1ae98c530467962535198b02cd4550cd418bbbaedc8b2910/openai-3.0.0.tar.gz"
+    sha256 "ffd00ef1678d70957e1f1ed98d5bfcf1d661f41ea4482f22e7d0144a66435a49"
   end
 
   resource "opentelemetry-api" do
@@ -913,8 +913,8 @@ class Graphify < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/55/e3/70399cb7dd41c10ac53367ae42139cf4b1ca5f36bb3dc6c9d33acdb43655/typing_inspection-0.4.2.tar.gz"
-    sha256 "ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"
+    url "https://files.pythonhosted.org/packages/6d/bc/4eae18cd40c65798a16267572ba346c11f599d44b01603dbd843342042bc/typing_inspection-0.4.3.tar.gz"
+    sha256 "c5f9ec1530b5c1e2c9bc34a84d9a3466ed1b2f3f2fa9f901368d9c5596210e4d"
   end
 
   resource "urllib3" do
