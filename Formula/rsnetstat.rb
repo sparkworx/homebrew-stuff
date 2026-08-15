@@ -1,8 +1,8 @@
 class Rsnetstat < Formula
   desc "High-fidelity, CIDR-complete alternative to macOS netstat -rn"
   homepage "https://github.com/sparkworx/rsnetstat"
-  url "https://github.com/sparkworx/rsnetstat/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "a261f4daaa80716a6424344cdeec0892adeb33b67addf8cbac3b0da28647fcf1"
+  url "https://github.com/sparkworx/rsnetstat/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "4f40b95903b418ff30ac333e9f2d144ab48465aa5c98f364e8fc81fd2abbb864"
   license "Apache-2.0"
   head "https://github.com/sparkworx/rsnetstat.git", branch: "main"
 
