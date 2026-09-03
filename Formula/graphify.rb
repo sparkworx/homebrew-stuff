@@ -67,6 +67,13 @@ class Graphify < Formula
   #     publishes manylinux abi3 wheels, so use those. manylinux2014 (glibc 2.17) is
   #     chosen for the broadest Linuxbrew compatibility.
   resource "cryptography" do
+    livecheck do
+      url "https://pypi.org/pypi/cryptography/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       url "https://files.pythonhosted.org/packages/bb/ad/5d6702db60b1e40b41ef513b6967ff5848f307d50f8449baf1634f5908f1/cryptography-50.0.1.tar.gz"
       sha256 "5dd9bda1c12b4162f6ff568eeb5e0ff956c28d14406e875cfe8a63a2d414ff20"
@@ -239,6 +246,14 @@ class Graphify < Formula
   # on_macos/on_linux + on_arm/on_intel selection covers macOS arm64/x86_64 and
   # Linux aarch64/x86_64. One uniform mechanism: version bumps only refresh hashes.
   resource "tree-sitter-bash" do
+    version "0.25.1"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-bash/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/23/bb/2d2cfbb1f89aaeb1ec892624f069d92d058d06bb66f16b9ec9fb5873ab60/tree_sitter_bash-0.25.1-cp310-abi3-macosx_11_0_arm64.whl"
@@ -262,6 +277,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-c" do
+    version "0.24.2"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-c/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/c1/1c/1140db75e7e375cda3c68792a33826c4fd40b5b98c3259d93c75f6c8368f/tree_sitter_c-0.24.2-cp310-abi3-macosx_11_0_arm64.whl"
@@ -285,6 +308,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-c-sharp" do
+    version "0.23.5"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-c-sharp/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/c8/13/593c8603f834eaf15082b81e079289fc9f062b4c0ab5b9489134084eec06/tree_sitter_c_sharp-0.23.5-cp310-abi3-macosx_11_0_arm64.whl"
@@ -308,6 +339,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-cpp" do
+    version "0.23.4"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-cpp/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/12/1c/0337c016bdc00a77a3326d12f10ee836401dd28f27db6fd5b7734bfb21ed/tree_sitter_cpp-0.23.4-cp39-abi3-macosx_11_0_arm64.whl"
@@ -331,6 +370,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-elixir" do
+    version "0.3.5"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-elixir/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/7e/d7/f0ad3de0b359a8a1f694268855bb34134c88774fa2276cb33413163c0403/tree_sitter_elixir-0.3.5-cp39-abi3-macosx_11_0_arm64.whl"
@@ -354,6 +401,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-fortran" do
+    version "0.6.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-fortran/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/b2/83/c93d2959030ff858f97a5cebedd1281341c6d69d240bb616c6fa7fb86538/tree_sitter_fortran-0.6.0-cp39-abi3-macosx_11_0_arm64.whl"
@@ -377,6 +432,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-go" do
+    version "0.25.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-go/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/32/16/dd4cb124b35e99239ab3624225da07d4cb8da4d8564ed81d03fcb3a6ba9f/tree_sitter_go-0.25.0-cp310-abi3-macosx_11_0_arm64.whl"
@@ -400,6 +463,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-groovy" do
+    version "0.1.2"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-groovy/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/26/17/a1fbf1fb2b13a3bdb1bc5d57cde77aaaa64f005eb25cacff50bf21148719/tree_sitter_groovy-0.1.2-cp39-abi3-macosx_11_0_arm64.whl"
@@ -423,6 +494,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-hcl" do
+    version "1.2.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-hcl/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/8e/8b/7618448cde58ca6fbefcf210ef98d7c4bd7d2b54b3e3d5cddd947c804a18/tree_sitter_hcl-1.2.0-cp310-abi3-macosx_11_0_arm64.whl"
@@ -446,6 +525,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-java" do
+    version "0.23.5"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-java/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/57/ef/6406b444e2a93bc72a04e802f4107e9ecf04b8de4a5528830726d210599c/tree_sitter_java-0.23.5-cp39-abi3-macosx_11_0_arm64.whl"
@@ -469,6 +556,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-javascript" do
+    version "0.25.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-javascript/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/b1/8f/6b4b2bc90d8ab3955856ce852cc9d1e82c81d7ab9646385f0e75ffd5b5d3/tree_sitter_javascript-0.25.0-cp310-abi3-macosx_11_0_arm64.whl"
@@ -492,6 +587,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-json" do
+    version "0.24.8"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-json/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/5c/31/102c15948d97b135611d6a995c97a3933c0e9745f25737723977f58e142c/tree_sitter_json-0.24.8-cp39-abi3-macosx_11_0_arm64.whl"
@@ -515,6 +618,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-julia" do
+    version "0.23.1"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-julia/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/ef/d6/7049e567a9d3be58449717e7af22424ee22afa43667e8e309ec0a3603fea/tree_sitter_julia-0.23.1-cp39-abi3-macosx_11_0_arm64.whl"
@@ -538,6 +649,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-kotlin" do
+    version "1.1.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-kotlin/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/7d/20/66105b6e94d062440955d374e64d030c3173cf4f592f6a6a3c426b3c94d0/tree_sitter_kotlin-1.1.0-cp39-abi3-macosx_11_0_arm64.whl"
@@ -561,6 +680,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-lua" do
+    version "0.5.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-lua/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/de/0c/6bc3228d01419e8b5af664bf328d174b02a64736ffa23a335c778c8cda68/tree_sitter_lua-0.5.0-cp310-abi3-macosx_11_0_arm64.whl"
@@ -584,6 +711,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-objc" do
+    version "3.0.2"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-objc/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/32/11/051f22252ee02ac3d0ca00ebcd99476da586b5d916390dc2f251e610ca7c/tree_sitter_objc-3.0.2-cp39-abi3-macosx_11_0_arm64.whl"
@@ -607,6 +742,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-pascal" do
+    version "0.11.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-pascal/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/7e/1e/06f87ce971119b6a6c1682a0647cad9774463ae9c68faa8c016d8c10d30f/tree_sitter_pascal-0.11.0-cp38-abi3-macosx_11_0_arm64.whl"
@@ -630,6 +773,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-php" do
+    version "0.24.1"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-php/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/ab/5e/b52f2599acb29f6899470f7137d3d491c752b88df3950fb7408aea57ddca/tree_sitter_php-0.24.1-cp310-abi3-macosx_11_0_arm64.whl"
@@ -653,6 +804,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-powershell" do
+    version "0.26.4"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-powershell/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/7f/53/486a2495d336d4f67031d759590223e4121fcc7da79afe989f29a1157c2f/tree_sitter_powershell-0.26.4-cp310-abi3-macosx_11_0_arm64.whl"
@@ -676,6 +835,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-python" do
+    version "0.25.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-python/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/e6/1d/60d8c2a0cc63d6ec4ba4e99ce61b802d2e39ef9db799bdf2a8f932a6cd4b/tree_sitter_python-0.25.0-cp310-abi3-macosx_11_0_arm64.whl"
@@ -699,6 +866,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-ruby" do
+    version "0.23.1"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-ruby/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/e7/38/c41ecf7692b8ecccd26861d3293a88150a4a52fc081abe60f837030d7315/tree_sitter_ruby-0.23.1-cp39-abi3-macosx_11_0_arm64.whl"
@@ -722,6 +897,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-rust" do
+    version "0.24.2"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-rust/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/78/2a/cf39f881a545360b5a86bb1accba1f4acc713daab01fb9edd35b6e84f473/tree_sitter_rust-0.24.2-cp39-abi3-macosx_11_0_arm64.whl"
@@ -745,6 +928,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-scala" do
+    version "0.26.2"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-scala/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/ec/5e/1b318ea477a578cdd00ce0d38417d5d0571d4632b108cd77931cc53244be/tree_sitter_scala-0.26.2-cp39-abi3-macosx_11_0_arm64.whl"
@@ -768,6 +959,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-sql" do
+    version "0.3.11"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-sql/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/05/45/b2bd5f9919ea15c4ae90a156999101ebd4caa4036babe54efaf9d3e77d55/tree_sitter_sql-0.3.11-cp310-abi3-macosx_11_0_arm64.whl"
@@ -791,6 +990,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-swift" do
+    version "0.7.3"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-swift/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/5d/37/84e2bc7826eb9007c531f47e5557461c5a48fd14bd3ea82424afa3d06b5f/tree_sitter_swift-0.7.3-cp38-abi3-macosx_11_0_arm64.whl"
@@ -814,6 +1021,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-typescript" do
+    version "0.23.2"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-typescript/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/8f/2f/1f36fda564518d84593f2740d5905ac127d590baf5c5753cef2a88a89c15/tree_sitter_typescript-0.23.2-cp39-abi3-macosx_11_0_arm64.whl"
@@ -837,6 +1052,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-verilog" do
+    version "1.0.3"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-verilog/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/b5/bb/865ef41dafc4e94513f0f186360a840104d0ec6fde3d60d9b432a36dfb02/tree_sitter_verilog-1.0.3-cp39-abi3-macosx_11_0_arm64.whl"
@@ -860,6 +1083,14 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-zig" do
+    version "1.1.2"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-zig/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
     on_macos do
       on_arm do
         url "https://files.pythonhosted.org/packages/5a/78/93d32fea98b3b031bc0fbec44e27f2b8cc1a1a8ff5a99dfb1a8f85b11d43/tree_sitter_zig-1.1.2-cp39-abi3-macosx_11_0_arm64.whl"
