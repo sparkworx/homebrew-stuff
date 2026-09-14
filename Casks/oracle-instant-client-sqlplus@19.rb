@@ -19,25 +19,19 @@ cask "oracle-instant-client-sqlplus@19" do
   IC_SQLPLUS_LIBS.each { |lib| artifact lib, target: "#{ic_dir}/#{lib}" }
   artifact "glogin.sql", target: "#{ic_dir}/glogin.sql"
 
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
-    IC_SQLPLUS_BINS.each do |bin|
-      system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{bin}", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
-    end
-    IC_SQLPLUS_LIBS.each do |lib|
-      system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{lib}", "#{HOMEBREW_PREFIX}/lib/#{lib}"]
-    end
-    system_command "/bin/mkdir", args: ["-p", "#{HOMEBREW_PREFIX}/share/oracle"]
-    system_command "/bin/ln", args: ["-sf", "#{ic_dir}/glogin.sql", "#{HOMEBREW_PREFIX}/share/oracle/glogin.sql"]
-  end
-
-  uninstall_preflight do
-    IC_SQLPLUS_BINS.each do |bin|
-      system_command "/bin/rm", args: ["-f", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
-    end
-    IC_SQLPLUS_LIBS.each do |lib|
-      system_command "/bin/rm", args: ["-f", "#{HOMEBREW_PREFIX}/lib/#{lib}"]
-    end
-    system_command "/bin/rm", args: ["-f", "#{HOMEBREW_PREFIX}/share/oracle/glogin.sql"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{HOMEBREW_PREFIX}}/instantclient_#{version.major}"],
+        writable_paths: ["instantclient_#{version.major}"],
+        writable_base:  :homebrew_prefix,
+        must_succeed:   false
+    symlink "instantclient_#{version.major}/sqlplus", "bin/sqlplus",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/libsqlplus.dylib", "lib/libsqlplus.dylib",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/libsqlplusic.dylib", "lib/libsqlplusic.dylib",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/glogin.sql", "share/oracle/glogin.sql",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
   end
 end

@@ -18,22 +18,25 @@ cask "oracle-instant-client-tools@19" do
   IC_TOOLS_BINS.each { |bin| artifact bin, target: "#{ic_dir}/#{bin}" }
   IC_TOOLS_LIBS.each { |lib| artifact lib, target: "#{ic_dir}/#{lib}" }
 
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", ic_dir]
-    IC_TOOLS_BINS.each do |bin|
-      system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{bin}", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
-    end
-    IC_TOOLS_LIBS.each do |lib|
-      system_command "/bin/ln", args: ["-sf", "#{ic_dir}/#{lib}", "#{HOMEBREW_PREFIX}/lib/#{lib}"]
-    end
-  end
-
-  uninstall_preflight do
-    IC_TOOLS_BINS.each do |bin|
-      system_command "/bin/rm", args: ["-f", "#{HOMEBREW_PREFIX}/bin/#{bin}"]
-    end
-    IC_TOOLS_LIBS.each do |lib|
-      system_command "/bin/rm", args: ["-f", "#{HOMEBREW_PREFIX}/lib/#{lib}"]
-    end
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-dr", "com.apple.quarantine", "{{HOMEBREW_PREFIX}}/instantclient_#{version.major}"],
+        writable_paths: ["instantclient_#{version.major}"],
+        writable_base:  :homebrew_prefix,
+        must_succeed:   false
+    symlink "instantclient_#{version.major}/exp", "bin/exp",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/expdp", "bin/expdp",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/imp", "bin/imp",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/impdp", "bin/impdp",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/sqlldr", "bin/sqlldr",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/wrc", "bin/wrc",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
+    symlink "instantclient_#{version.major}/libnfsodm19.dylib", "lib/libnfsodm19.dylib",
+            source_base: :homebrew_prefix, target_base: :homebrew_prefix, overwrite: true, remove_on_uninstall: true
   end
 end
