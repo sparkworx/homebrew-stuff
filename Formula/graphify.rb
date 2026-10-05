@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/c7/bf/5ace8e159263fbd206130ff528511cf6a1696754432d9dcaf0e035ab5324/graphifyy-0.9.65.tar.gz"
-  sha256 "409d96a12e915fc4f76b7a692a5482671fd2696b2304a02ce39dbcdd6e5cabdd"
+  url "https://files.pythonhosted.org/packages/c8/62/9255f27efda2596c7af0d2ba078626c2888c02fd858e2e0c8d2754968134/graphifyy-0.9.76.tar.gz"
+  sha256 "64ec394cae65b9af5c37aa5b139fa954422183808ffc71ff49bfc17ae7406c32"
   license "MIT"
 
   livecheck do
@@ -25,8 +25,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/a4/8b/4210dd090000ba35d07cee9105530794911d955788c3992b4882df49eaac/anthropic-1.7.0.tar.gz"
-    sha256 "0ab1b04668606ba1ae93f6d9e8dcc2e0c4f0debebd4eea4773a3a595f0836db1"
+    url "https://files.pythonhosted.org/packages/ad/12/9a6ffa397b172adb040008d934a1dfd85d0e4cefc77489416db294ffc880/anthropic-1.11.0.tar.gz"
+    sha256 "3906fabac7ad7b5b46c6186040398fc7826885c77ce34e4dd7849de16fc8d0f8"
   end
 
   resource "anyio" do
@@ -50,8 +50,8 @@ class Graphify < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "click" do
@@ -75,17 +75,17 @@ class Graphify < Formula
     end
 
     on_macos do
-      url "https://files.pythonhosted.org/packages/bb/ad/5d6702db60b1e40b41ef513b6967ff5848f307d50f8449baf1634f5908f1/cryptography-50.0.1.tar.gz"
-      sha256 "5dd9bda1c12b4162f6ff568eeb5e0ff956c28d14406e875cfe8a63a2d414ff20"
+      url "https://files.pythonhosted.org/packages/9d/af/182eb91b0df3fe75c4d9f26fe70684569566745f6ba7e5c9c73a862c5252/cryptography-50.0.2.tar.gz"
+      sha256 "7b46165bb56eb4704e2eaaf86f3c940d19154535d9b0ca7d6d590b04060e00d5"
     end
     on_linux do
       on_arm do
-        url "https://files.pythonhosted.org/packages/90/34/9ce9a62ed9dc82ca9fd6a34445b6904af56e5f38b3eae2ed32e49c36053d/cryptography-50.0.1-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl"
-        sha256 "53e279950892dc102c6b4e52af03ae5ea92fac572a1ddab78ca73a997f62b69f"
+        url "https://files.pythonhosted.org/packages/d9/69/c9bd862c3bf43d6399c433caf002df16e2dffd4be49bdf515cda38038711/cryptography-50.0.2-cp311-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl"
+        sha256 "79def8d059362e7831389ed3be0ecdf58a89386e1271e35dd9f5af84e81bffd0"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/57/26/e6d4fc8512a51a5f9ee7bfdbfb853bce1197087df40c9ad993ad370b846f/cryptography-50.0.1-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
-        sha256 "ff838d62ec1bfce4f9ba7fa16f4a7b554cd8d0c299e6be37502161a660c84eef"
+        url "https://files.pythonhosted.org/packages/21/69/64cef1f702bf6657e0cc186ed1a2891d50d29fb41586b254e1c07adea261/cryptography-50.0.2-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+        sha256 "630ebfea3bf689d075f82316324ff7433dc447fe6bc1bfc76524b74b4a9567d2"
       end
     end
   end
@@ -101,13 +101,13 @@ class Graphify < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/15/8c/e925b1c92018abb3a1863ce1549d76d2381e334d21d65d4ac8f65dabd78a/httpcore2-2.13.0.tar.gz"
-    sha256 "2adc8be4fb285fbcd6d894298db3b52c177e74b6674eda3a76bd36be3292a3db"
+    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
+    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/b9/a0/e9deef4654132857b5a5dbe4eddd0ac59c2814500e11f2f5044cd81103ee/httpx2-2.13.0.tar.gz"
-    sha256 "81bd07dc67a3701729ef1f777a3c00c915d4539604fdb5afd327f8682f6b7b44"
+    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
+    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
   end
 
   resource "idna" do
@@ -131,13 +131,13 @@ class Graphify < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/76/31/ac54fb0fdd5b37de704486e288bba4fbbb463f24cfcfedbede407b854513/mcp-2.2.0.tar.gz"
-    sha256 "2dc37ecb1974becdcebdbf7561e7c15a07dbbf20ba21ba16c3593b3038b3afbd"
+    url "https://files.pythonhosted.org/packages/9d/8d/e0d339616f4810e9051d4aba6887afab289ab1f81875fe908b606cdfd0e3/mcp-2.3.0.tar.gz"
+    sha256 "8b147a50441cf059dc88c684e0aeed3687f0aa0f39c6cde7b90330effd2b34d8"
   end
 
   resource "mcp-types" do
-    url "https://files.pythonhosted.org/packages/ae/91/762d7755d971aff8a28d75f7961656148edf27875c8026e6385aaab08ae7/mcp_types-2.2.0.tar.gz"
-    sha256 "d3ed53703ddd10d9c6399f29d322bb66f3f67ab41348ac8556ba23e07fedefad"
+    url "https://files.pythonhosted.org/packages/9e/2d/7c251e34207f6c51000312fc8839111ac45cfe02023f90b44e7f1051dd8e/mcp_types-2.3.0.tar.gz"
+    sha256 "d1e46549edb35ee19a94940fcee6d1addd7e589ab7ea92dda83f5d84781fc362"
   end
 
   resource "networkx" do
@@ -151,13 +151,13 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/e2/c6/770171ef28854d8092ee2c3df68ef97d127362b28771e6b423c948894e07/openai-3.16.2.tar.gz"
-    sha256 "e129455fc6a744276cda63a9e2f0759207bc0cf24afc4cf356bf5029e631e955"
+    url "https://files.pythonhosted.org/packages/73/4f/e57670227cb7b61362d8f9bfba54d4e9f7bde799798c342782788bc12d6c/openai-3.24.0.tar.gz"
+    sha256 "1e7463f7d78773ab2ce4fe85710481aa5bd5ffefd54c8de4b067506cd2d42895"
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/ee/8b/aa9e2d8b8dfa7c946f7dec5d1f8f6ba8eca062f43509a06bdb5ce93d26c0/opentelemetry_api-1.44.0.tar.gz"
-    sha256 "67647e5e9566edcf421166fdf022b3537f818635daa852b289e34604dc6fb33a"
+    url "https://files.pythonhosted.org/packages/1f/dc/e12c1fe1ed8a7b7149777127b1a0e12ce5bd5a81d97408bedc2128c260f5/opentelemetry_api-1.45.0.tar.gz"
+    sha256 "711ede81773c8025c2c03dac0450bc89f3d30aea6eabcc815c570d4e35a963f7"
   end
 
   resource "pycparser" do
@@ -176,8 +176,8 @@ class Graphify < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/af/c3/8a3b59c25070cc61dc517fbdfa5dc0904670c96f605cc69759dc09166b99/pyjwt-2.14.0.tar.gz"
-    sha256 "77283c83fb56ecf566a886c757a714bc83668e38156de2cce8263302f42e0b86"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "python-multipart" do
@@ -196,8 +196,8 @@ class Graphify < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/b9/5c/f403115361de25809e8f785686ec7096e30fef73be9ae35aa51da4e80abb/regex-2026.9.10.tar.gz"
-    sha256 "1e321e2c84f0e52c457f5ea5944f796d6e8e09cb99738ea98dcc1bfe402a128d"
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
   end
 
   resource "requests" do
@@ -206,8 +206,8 @@ class Graphify < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/aa/2a/9618a122aeb2a169a28b03889a2995fe297588964333d4a7d67bdf46e147/rpds_py-2026.6.3.tar.gz"
-    sha256 "1cebd1337c242e4ec2293e541f712b2da849b29f48f0c293684b71c0632625d4"
+    url "https://files.pythonhosted.org/packages/42/68/3bd46b8a5e01d3c2ebdf9c5e9497912e3fe0cde02bac21a7130ca866e403/rpds_py-2026.9.1.tar.gz"
+    sha256 "4793ef7f78268b124b73fa933440f01d258bbae01de9fa53e9080c9ab0425a12"
   end
 
   resource "sniffio" do
@@ -216,13 +216,13 @@ class Graphify < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/2b/54/6767bb789b2f2fed6e0f953df949cd39dc263a384c1b65a95232598621d6/sse_starlette-3.4.11.tar.gz"
-    sha256 "1bae716c02f3e6f294be41ff333220692dae7c3cbab077c900f159676719dade"
+    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
+    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/b5/b4/205b0d5241d934e8add0c38aa924c4f9fb7330834ff11e5444db964ec3f9/starlette-1.6.0.tar.gz"
-    sha256 "d4e3ac5e546444960c710297a3c9fc3f7ebae1b7e963f3d36173b49da535be9b"
+    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
+    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
   end
 
   resource "tiktoken" do
@@ -990,7 +990,7 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-swift" do
-    version "0.7.3"
+    version "0.7.4"
     livecheck do
       url "https://pypi.org/pypi/tree-sitter-swift/json"
       strategy :json do |json|
@@ -1000,22 +1000,22 @@ class Graphify < Formula
 
     on_macos do
       on_arm do
-        url "https://files.pythonhosted.org/packages/5d/37/84e2bc7826eb9007c531f47e5557461c5a48fd14bd3ea82424afa3d06b5f/tree_sitter_swift-0.7.3-cp38-abi3-macosx_11_0_arm64.whl"
-        sha256 "ee627e027d0868c552beca13dcdfa9944662b126f642464c5038ee3204e68340"
+        url "https://files.pythonhosted.org/packages/3d/94/ae2a4abb3f240b613635507e83893ad192bbc58074f811eeec65dba38ab6/tree_sitter_swift-0.7.4-cp38-abi3-macosx_11_0_arm64.whl"
+        sha256 "62ce592607fa532687a2d4656a90db2f04cbc197e34077038bca2e47073b6db7"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/9a/9d/df190b08548dcfa67790d3197442989b3dd5e46d31ee61a1b9ecea35d57b/tree_sitter_swift-0.7.3-cp38-abi3-macosx_10_9_x86_64.whl"
-        sha256 "2531ec866c22ea52384e2786e07f3b2bb396c6446428a2df02cc74af3f7e6b6a"
+        url "https://files.pythonhosted.org/packages/5d/99/13ce6e8b5ed496fff03a8d04e34d7dd75f60166bea50c435da4a84ddb0f7/tree_sitter_swift-0.7.4-cp38-abi3-macosx_10_9_x86_64.whl"
+        sha256 "e76bc562815bbeb4a6504a9fac6699ffc2b779ef55e12ea863f6a3f8fa0dfee6"
       end
     end
     on_linux do
       on_arm do
-        url "https://files.pythonhosted.org/packages/ff/38/0b7c4d195d03396c19a7968a13342c89cb8322d97c4882bb7c4240adf419/tree_sitter_swift-0.7.3-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
-        sha256 "eee02fecb60a07267edd123148c583d6ec9efc5d7fcb25e53da4e56869fd4cf3"
+        url "https://files.pythonhosted.org/packages/e8/11/b5a3c0a3bf1bdf64dbaa0ebd71c1cfeff22aa13899443674175c76fdb500/tree_sitter_swift-0.7.4-cp38-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+        sha256 "f54606c229c32ba130fbb005cbfb99e50ccfa0023ab9d1ffd45850515c893a7b"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/e1/9a/55f6cc9aad9079facf166d616472fd8e05007cbee9c62b749e153bf0521d/tree_sitter_swift-0.7.3-cp38-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
-        sha256 "f38feeb4f7350c8b30d567a0dc08bf1eeaa67c241b6888d72a45a8b1a4aa7187"
+        url "https://files.pythonhosted.org/packages/9c/d1/05bcef72968411fefb7d6a0a2ccfb5bb3d248600949fe01fb80c6c3db57a/tree_sitter_swift-0.7.4-cp38-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
+        sha256 "d11d15a479d7d3b14c7fc526b4daab107995feca5752936fec5c60cc7fa6fe4d"
       end
     end
   end
@@ -1134,8 +1134,8 @@ class Graphify < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/5d/ad/04bbb797c84fc1f26cb171f7394716f4865ffb8d8c5e1eef42565c2dfa6b/uvicorn-0.53.0.tar.gz"
-    sha256 "a9356f0cb89b3b8621529c5d5eebd69bfe154f4c3f68b4cf2de47e45fa855c2e"
+    url "https://files.pythonhosted.org/packages/da/34/30e9280707135d2cfc589dfff3cb796bd07a3aeb1a3e415ba09dd89d7bb4/uvicorn-0.54.0.tar.gz"
+    sha256 "a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620"
   end
 
   def install
