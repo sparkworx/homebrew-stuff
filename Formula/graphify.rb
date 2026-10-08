@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/fd/1d/4bf239ccd41276d8dbe43ead4889a3b663b6996e76cb137afcc0ff49fd00/graphifyy-0.9.79.tar.gz"
-  sha256 "efa4b87109ea1cf536372ec88620dd2325183f4b4dc59ae4c18df88c23afa80b"
+  url "https://files.pythonhosted.org/packages/b3/9e/4a8b407535fcbd45e36351cb637e1a8946103ff895eac99a16a829e1c533/graphifyy-0.9.80.tar.gz"
+  sha256 "7555f54002ee2497692c662f130166c171834dc992f36d0f965e34204e947b07"
   license "MIT"
 
   livecheck do
@@ -25,8 +25,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/ad/12/9a6ffa397b172adb040008d934a1dfd85d0e4cefc77489416db294ffc880/anthropic-1.11.0.tar.gz"
-    sha256 "3906fabac7ad7b5b46c6186040398fc7826885c77ce34e4dd7849de16fc8d0f8"
+    url "https://files.pythonhosted.org/packages/bd/cc/0da23e94020c62c0077c17648252f32d575b187710faaf3b85145e8e555d/anthropic-1.12.1.tar.gz"
+    sha256 "10f720ab6ddf40ef12e0e5743412c3a6dfac1109c244e633c9a2dbd36778ad30"
   end
 
   resource "anyio" do
@@ -151,8 +151,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/b4/07/cd478a4595282ac72e31090531bb37f8a1b6fd9cb45c1da6d6215078a4d9/openai-3.26.0.tar.gz"
-    sha256 "73b470c09cf2171dce930e36af01c6632241adda0120ad84302ad229f9130a5a"
+    url "https://files.pythonhosted.org/packages/36/f5/c9accd2d4077b0e56ffb63e9a943a656797c715bbd7c80f13f401865a350/openai-3.26.1.tar.gz"
+    sha256 "4b64060155596aece83aa81d270f326ee081b83da70a0d4b50091a0c60e9151c"
   end
 
   resource "opentelemetry-api" do
@@ -161,8 +161,8 @@ class Graphify < Formula
   end
 
   resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/1b/7d/92392ff7815c21062bea51aa7b87d45576f649f16458d78b7cf94b9ab2e6/pycparser-3.0.tar.gz"
-    sha256 "600f49d217304a5902ac3c37e1281c9fe94e4d0489de643a9504c5cdfdfc6b29"
+    url "https://files.pythonhosted.org/packages/ac/d3/eb1d3bc30dda12f7e69640ae2ac8cb10240b71fb73024ad528b7d2ae73da/pycparser-3.1.tar.gz"
+    sha256 "b3fc6dec06a8b2fefa0ed4ff92285306a5e3be9987bc5603c9edbdc4e492418f"
   end
 
   resource "pydantic" do
