@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/53/6e/2f8754cad546d44d4171cc6e0b1e9e3a0a5654700e901af5de9dc0f1d9bb/graphifyy-0.9.84.tar.gz"
-  sha256 "1c8ef71d751f11a08a9b6a45c61e5d8ec75614d8c179ce1bd7482b2d9bc5fc4d"
+  url "https://files.pythonhosted.org/packages/3c/d3/1abb5e77cea8e0a2cbedae85076279f915f872e35d7477ad78b2a94ee504/graphifyy-0.9.85.tar.gz"
+  sha256 "f312f53d07b9e9f30f9c8f0630dfbf702009ea990cdfb814fe74f81ea3fc3955"
   license "MIT"
 
   livecheck do
@@ -146,8 +146,8 @@ class Graphify < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz"
-    sha256 "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
+    url "https://files.pythonhosted.org/packages/95/b0/c7453d0b6e2073c3264468b106ee1563750cecc910965e67357e3698c83e/numpy-2.5.4.tar.gz"
+    sha256 "9a94cf751c9ad8ebaa835bcd3d40dacf8534ad086b88c38029b65123c7999d2a"
   end
 
   resource "openai" do
