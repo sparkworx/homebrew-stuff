@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/3c/d3/1abb5e77cea8e0a2cbedae85076279f915f872e35d7477ad78b2a94ee504/graphifyy-0.9.85.tar.gz"
-  sha256 "f312f53d07b9e9f30f9c8f0630dfbf702009ea990cdfb814fe74f81ea3fc3955"
+  url "https://files.pythonhosted.org/packages/d8/ce/3b2e95b13c0d14d23433e85806130067dd93bb3ae177ff209649ab7112bc/graphifyy-0.9.86.tar.gz"
+  sha256 "526784f4e97d136c9eb5ee38a605717aac4473985166aedef1fe25bdf900005a"
   license "MIT"
 
   livecheck do
@@ -151,8 +151,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/b7/a3/3b5576af9c4b8cb7eef1383d33c48a9431b292983fe4b78cbffb31d0aeeb/openai-3.28.0.tar.gz"
-    sha256 "cf0509d32d7bd8eb6a3db02417957cb455212b6629d071826b9ea1f61659e2a4"
+    url "https://files.pythonhosted.org/packages/e4/99/5f6206494a87edbaa67b35c5212a2cb5e6f414bee5efb0f0672c4704315a/openai-3.29.0.tar.gz"
+    sha256 "bc70a46d97b70ba64daedfcb3227f610a395f297ec68d39f735676190a92be94"
   end
 
   resource "opentelemetry-api" do
@@ -166,13 +166,13 @@ class Graphify < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/6b/fb/6e44b63b26efea1cec48c26d8362313310202ef5ed6e7a52f1669e64e2cd/pydantic-2.14.0.tar.gz"
-    sha256 "8a51a7aaddd60f55566d1f07bdd87b92b463903f39a8f26b71a06314cd1548ae"
+    url "https://files.pythonhosted.org/packages/7c/0b/8e10b2e693af8ec54346a14caf36221334775975a747c9ceaa3f8371d96d/pydantic-2.14.1.tar.gz"
+    sha256 "94f478203dd03404682a1ada216965651dd74b1d2d5ffd62e00e0837caab5c26"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/e6/6d/196e8c819e0e934f35a1a33b3530396feadb0af4ca38fe9f995249e55794/pydantic_core-2.50.0.tar.gz"
-    sha256 "84d2d38f7d163c4dec292f379e9de1960c661795442aca6c90d706436cb3749e"
+    url "https://files.pythonhosted.org/packages/a6/24/af4ec4be49fbc810f35b0bdcacc3d433b56bbfa469fd3bfd4ae116cd9bf1/pydantic_core-2.50.1.tar.gz"
+    sha256 "e50d7b94baac6c7d09927fa5ca5800a0c7ee5015c7fcff65beb3a1931b5a6e09"
   end
 
   resource "pyjwt" do
