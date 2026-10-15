@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/d8/ce/3b2e95b13c0d14d23433e85806130067dd93bb3ae177ff209649ab7112bc/graphifyy-0.9.86.tar.gz"
-  sha256 "526784f4e97d136c9eb5ee38a605717aac4473985166aedef1fe25bdf900005a"
+  url "https://files.pythonhosted.org/packages/a9/be/d9be93fea0a69bc279e94513cb531dc02e9454a65783ba6d6d2dccd5eb8b/graphifyy-0.9.91.tar.gz"
+  sha256 "9eb8d4bfdc197058a81d39ae8d9784f39e1f940cd6bb04c1afc88f39dabb1f0d"
   license "MIT"
 
   livecheck do
@@ -25,8 +25,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/0b/ed/e76e50601b7c476bcb9a2a7a4c4dab6f1a9b2c03e3922de8b3ec599ccbc5/anthropic-1.13.0.tar.gz"
-    sha256 "ad11d9bb9adafdfea26113943bcde9973e2a439ebeeda6c89ff3e3d85bb2f5c1"
+    url "https://files.pythonhosted.org/packages/0f/c2/be99fac19b24c22b00d2a63ac1756b203bd3058ff54a14028c43b9f33116/anthropic-1.14.0.tar.gz"
+    sha256 "d9284895864a8457ed87f0accc51fd488ad9743952e597c814e7dc9d78ac8e38"
   end
 
   resource "anyio" do
@@ -151,8 +151,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/e4/99/5f6206494a87edbaa67b35c5212a2cb5e6f414bee5efb0f0672c4704315a/openai-3.29.0.tar.gz"
-    sha256 "bc70a46d97b70ba64daedfcb3227f610a395f297ec68d39f735676190a92be94"
+    url "https://files.pythonhosted.org/packages/73/99/d0c5b9e60eb131bfe5f6f818e9b25650b64004ff84512c0f7e00a246b826/openai-3.31.0.tar.gz"
+    sha256 "58110edba9acaf29cb2a675a1cbcccdd9f2fdb4932baed474dc847a7639e5d02"
   end
 
   resource "opentelemetry-api" do
@@ -221,8 +221,8 @@ class Graphify < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
-    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+    url "https://files.pythonhosted.org/packages/e9/0c/6efb252d091ecccd7d62048ae11f0ea35cd75a4fbaeea5e30f9c3bf91d10/starlette-1.8.0.tar.gz"
+    sha256 "1565dc0b35d5737a271ed1e0e04e949f4e81198799f216d2667b0a0fb9cf9522"
   end
 
   resource "tiktoken" do
@@ -1114,8 +1114,8 @@ class Graphify < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "typing-extensions" do
