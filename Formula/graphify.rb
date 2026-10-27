@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/88/ed/b0d38ca3f5bba7da18321253cdf75f390a5d47eeaef0f4f185e0e67af5b8/graphifyy-0.9.95.tar.gz"
-  sha256 "9da8cde851d661d467a4aa52d79ab34be601e0c45e09ab7665c49db88065a98e"
+  url "https://files.pythonhosted.org/packages/e7/5b/a4bada1fdf6b9ea1eaa0d1fb139add9b57ffb9c62146a9a668f0f303cad0/graphifyy-0.9.96.tar.gz"
+  sha256 "3e1938a78e01475d5931187896c8d6ab17b04f30db06e271c86bd9f50f946fc6"
   license "MIT"
 
   livecheck do
@@ -152,8 +152,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/0a/66/d4c48dc690e36b297c178636d8434050ac92df9db8a4c89d9bd451cccc95/openai-3.37.0.tar.gz"
-    sha256 "670bd6f699000d43a2073bcf94374a55bb133bfe5de0d084d47eb9bb9f6a8e5d"
+    url "https://files.pythonhosted.org/packages/5a/25/c8242b66f7bc107d6a02887cb8463f45f54f77a150afb2613e61cb3e13f8/openai-3.39.0.tar.gz"
+    sha256 "02687994f7bb6a4e80ed7796426d46c654889821ce4eb48699be15b3a425e1d3"
   end
 
   resource "opentelemetry-api" do
@@ -222,8 +222,8 @@ class Graphify < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/af/2e/16b9cce59c2eebd2f944b41b01df119f8ee65535ce839c462f1b2c9ae2e0/sse_starlette-3.5.1.tar.gz"
-    sha256 "dbb1461cd53c1e284537c3ddcf92f54f24178519a3f1e335e49e5283993db0f7"
+    url "https://files.pythonhosted.org/packages/71/7f/3b8ec4f27833f7b8c270a3ef960b6d435e1065439847bc0fcd1e58ae898b/sse_starlette-3.6.0.tar.gz"
+    sha256 "623151d6c20dc0eebf1b3379c27faae91fff883bac7ab6665f16f46440a88b3a"
   end
 
   resource "starlette" do
