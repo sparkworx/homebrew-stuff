@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/e7/5b/a4bada1fdf6b9ea1eaa0d1fb139add9b57ffb9c62146a9a668f0f303cad0/graphifyy-0.9.96.tar.gz"
-  sha256 "3e1938a78e01475d5931187896c8d6ab17b04f30db06e271c86bd9f50f946fc6"
+  url "https://files.pythonhosted.org/packages/00/45/7ebc7fd53e8bf85718e294a38eec36a0f7c49b7eb1db2dce1484c51a6778/graphifyy-0.9.97.tar.gz"
+  sha256 "562a9007caa96419f33dbca007647374b6986bde486021b7475e2566d9c5904f"
   license "MIT"
 
   livecheck do
@@ -152,8 +152,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/5a/25/c8242b66f7bc107d6a02887cb8463f45f54f77a150afb2613e61cb3e13f8/openai-3.39.0.tar.gz"
-    sha256 "02687994f7bb6a4e80ed7796426d46c654889821ce4eb48699be15b3a425e1d3"
+    url "https://files.pythonhosted.org/packages/31/ce/5b2e20d41c4e82dbb4be0192c62ce53516111896f642466fa71b82dccf0f/openai-3.40.0.tar.gz"
+    sha256 "df309d434130e89a23e9c687fc4bcd3df0df705a33d3872503c87448df69f56f"
   end
 
   resource "opentelemetry-api" do
