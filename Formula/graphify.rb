@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/00/45/7ebc7fd53e8bf85718e294a38eec36a0f7c49b7eb1db2dce1484c51a6778/graphifyy-0.9.97.tar.gz"
-  sha256 "562a9007caa96419f33dbca007647374b6986bde486021b7475e2566d9c5904f"
+  url "https://files.pythonhosted.org/packages/f8/21/b97112f10722262e8996cda7c2ad3b6b82d45ba8953fefd96f31623604a2/graphifyy-0.9.100.tar.gz"
+  sha256 "bb089c5932605b4329f901c4f90b65d2b163f152b0aa7626abd29600b3fa974d"
   license "MIT"
 
   livecheck do
@@ -31,8 +31,8 @@ class Graphify < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
-    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
+    url "https://files.pythonhosted.org/packages/a1/98/7e457a3b014976887a050561955c0b76e1e7e2d6e27b78ecef2ef80518f2/anyio-4.16.0.tar.gz"
+    sha256 "59bb03251907983d1603d27c3087ddb1e93299ea2163adcdba37899a4fb12ffb"
   end
 
   resource "attrs" do
@@ -152,13 +152,13 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/31/ce/5b2e20d41c4e82dbb4be0192c62ce53516111896f642466fa71b82dccf0f/openai-3.40.0.tar.gz"
-    sha256 "df309d434130e89a23e9c687fc4bcd3df0df705a33d3872503c87448df69f56f"
+    url "https://files.pythonhosted.org/packages/9f/7b/e01d5288d13e3bae3714ed39df402f99f88f422dcd978c5ce94848037200/openai-3.42.1.tar.gz"
+    sha256 "4222d919374648ff572753626e942f26eb1ece8a5e0e9a2708c9be4d560f070f"
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/2e/02/6e0ae9cc61bd3169d401077b507b3ebc344745171e1051ab430be012dcd9/opentelemetry_api-1.45.1.tar.gz"
-    sha256 "aa38ed19bcc084ba42782a73255b3582283eced7ad6dddbd6695189e69adfb75"
+    url "https://files.pythonhosted.org/packages/19/14/cf3a6b6448849656e1e5f4e2101f3988dc6789724050096aba1bc5ccf592/opentelemetry_api-1.45.2.tar.gz"
+    sha256 "d7b0008e21e5fd61cbe7a7f34ca3b6905a78ab677d9bc395e299359c75cda6b4"
   end
 
   resource "pycparser" do
@@ -167,13 +167,13 @@ class Graphify < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/7c/0b/8e10b2e693af8ec54346a14caf36221334775975a747c9ceaa3f8371d96d/pydantic-2.14.1.tar.gz"
-    sha256 "94f478203dd03404682a1ada216965651dd74b1d2d5ffd62e00e0837caab5c26"
+    url "https://files.pythonhosted.org/packages/9f/d5/b4867fa7c7f04c34997d7d8aad744f64d210bb99d67cf18bf3fb1eea1aed/pydantic-2.14.2.tar.gz"
+    sha256 "fb7b2db6cefe8414dd612edeede49c4c433acb0432b0f92b95024e45f66c505d"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/a6/24/af4ec4be49fbc810f35b0bdcacc3d433b56bbfa469fd3bfd4ae116cd9bf1/pydantic_core-2.50.1.tar.gz"
-    sha256 "e50d7b94baac6c7d09927fa5ca5800a0c7ee5015c7fcff65beb3a1931b5a6e09"
+    url "https://files.pythonhosted.org/packages/af/8e/23ec1021834e35041fbb2f10946141e6acdfd39379c45cc4d65a4e8a1d98/pydantic_core-2.50.2.tar.gz"
+    sha256 "1b0e8dc3932cf4e9ed5727570325cacc716b9409ffc794a221c0ccc72e8eb775"
   end
 
   resource "pyjwt" do
@@ -182,8 +182,8 @@ class Graphify < Formula
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/5b/42/55c32bb9b12693c092ad250a0e82edb5b31ddeda6eb772de5f308b3804ad/python_multipart-0.0.32.tar.gz"
-    sha256 "be54b7f3fa167bb83e4fcd936b887b708f4e57fe75911c02aebf53efaf8d938e"
+    url "https://files.pythonhosted.org/packages/9f/b7/15b905f6142a9a8a68f66900788da1a32e4d4254452783b37ad1eccb0506/python_multipart-0.0.33.tar.gz"
+    sha256 "b8112424a6abd162ec08d390565dd113ad699f2fe6fef3c987b8bbcbfe9e390d"
   end
 
   resource "pyyaml" do
@@ -934,7 +934,7 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-scala" do
-    version "0.26.3"
+    version "0.26.4"
     livecheck do
       url "https://pypi.org/pypi/tree-sitter-scala/json"
       strategy :json do |json|
@@ -944,22 +944,22 @@ class Graphify < Formula
 
     on_macos do
       on_arm do
-        url "https://files.pythonhosted.org/packages/87/26/479d44a3bf32cead7db71e06ec1f3ad3b819e3ebe00f3a9293edc77c5732/tree_sitter_scala-0.26.3-cp39-abi3-macosx_11_0_arm64.whl"
-        sha256 "a7dde82ad5060201026ca788e844c430940bfa4a3ff9b28e283ed687349204f4"
+        url "https://files.pythonhosted.org/packages/b9/61/a54c1eb79859901dec957562f700bb57a436f69020e659f7ea248f61bdf2/tree_sitter_scala-0.26.4-cp39-abi3-macosx_11_0_arm64.whl"
+        sha256 "e65e4880c46bb9c7dab9de6fa38f8f5f3362b2c92f3f431c238c022b2ab303d9"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/83/c5/fa396ddaef219a2e90413ff927bb13bb307315a5cca9c9efc9b7da628fb8/tree_sitter_scala-0.26.3-cp39-abi3-macosx_10_9_x86_64.whl"
-        sha256 "56bc0d7d57c04051833842e25d881361e0a92160db66f61f4ca8a8f2f90fb7b2"
+        url "https://files.pythonhosted.org/packages/67/74/178dd35fff14d71eee7e9030d6463e36791e8c5b9dde6b5d7d30acef792f/tree_sitter_scala-0.26.4-cp39-abi3-macosx_10_9_x86_64.whl"
+        sha256 "831047b6e42c77617f4f2af4c8cc86941ef401b92f53db67b88859eab7485a15"
       end
     end
     on_linux do
       on_arm do
-        url "https://files.pythonhosted.org/packages/28/b8/5fb08e121d7fdbe372479c6c10adaa5870277c0d17f071c9dc5d42923287/tree_sitter_scala-0.26.3-cp39-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
-        sha256 "85c5870037e91fe7c7424141e102f02de312ce66b28025dba26b5019781656fb"
+        url "https://files.pythonhosted.org/packages/45/26/6a5e6875b8518a657834d2fe7962f2a689327e7f5073f7d31239010370b5/tree_sitter_scala-0.26.4-cp39-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+        sha256 "cf35d9f1460a84bae139c9eb97519c39373ed613a9073256f9ce245a9447ec40"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/8c/8f/0e10b6f4f944ef7204c033d3251b1af96707443c001e0d974de5f05ab21d/tree_sitter_scala-0.26.3-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
-        sha256 "a66b803409bb76ae6a03b696969594d3da64bc93af375ddafcdb7c7bcc718cc2"
+        url "https://files.pythonhosted.org/packages/3e/97/97b1db3e6a87ff423c853202df47ae67c798bb93e0026bf86c1c039cb6bd/tree_sitter_scala-0.26.4-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+        sha256 "44f017841049b54bc4ea455833f46d67d1fd05121caa07bebc03b5667817a325"
       end
     end
   end
