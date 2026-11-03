@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/f8/21/b97112f10722262e8996cda7c2ad3b6b82d45ba8953fefd96f31623604a2/graphifyy-0.9.100.tar.gz"
-  sha256 "bb089c5932605b4329f901c4f90b65d2b163f152b0aa7626abd29600b3fa974d"
+  url "https://files.pythonhosted.org/packages/1b/7c/542b3a93cfc4d765d1aa4898e1111ffb3bf49bd25e95b4a6c2314f6c2124/graphifyy-0.9.101.tar.gz"
+  sha256 "8d8fad973f0a49941ff0f0730453303c8bbb2eafd073cc7f6c6c4211e2343b55"
   license "MIT"
 
   livecheck do
@@ -26,8 +26,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/3e/ba/4c91947e0d0062d66d371db371597287153f7685fbed512d3294d0cde3c7/anthropic-2.3.0.tar.gz"
-    sha256 "edfdea1e3fa7b3ce25df1511953408b2f03bfa61eb6f6268f766101a9e18ad53"
+    url "https://files.pythonhosted.org/packages/c8/5b/6c13b126554cfec789ce14a74f2ccfd46382a0eb296ec78ea6b80eeac3b5/anthropic-2.4.0.tar.gz"
+    sha256 "c59cab76049cf581e90e2ee3a20472291029b7a6a1ee2ef32bff2b2a7010fd47"
   end
 
   resource "anyio" do
