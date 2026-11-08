@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/1b/7c/542b3a93cfc4d765d1aa4898e1111ffb3bf49bd25e95b4a6c2314f6c2124/graphifyy-0.9.101.tar.gz"
-  sha256 "8d8fad973f0a49941ff0f0730453303c8bbb2eafd073cc7f6c6c4211e2343b55"
+  url "https://files.pythonhosted.org/packages/ee/b6/50fc873d5502f00c2d92c970fa6cebd646e04b1df2add3b4041d5fbb0f86/graphifyy-0.9.104.tar.gz"
+  sha256 "01963f515fcdd2e369c179ee701a3865623c5ee6b7ff8dafa2f1929d5be0d1c6"
   license "MIT"
 
   livecheck do
@@ -26,8 +26,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/c8/5b/6c13b126554cfec789ce14a74f2ccfd46382a0eb296ec78ea6b80eeac3b5/anthropic-2.4.0.tar.gz"
-    sha256 "c59cab76049cf581e90e2ee3a20472291029b7a6a1ee2ef32bff2b2a7010fd47"
+    url "https://files.pythonhosted.org/packages/4a/a8/0e50326e4c408f4b4ee3aae4c3bbd60012570b88bc5887effc8542509068/anthropic-2.6.0.tar.gz"
+    sha256 "a38d8698258a4cb33a9bc9d2f0ced1d96b71010870e5ed703807d21021a0da24"
   end
 
   resource "anyio" do
@@ -56,8 +56,8 @@ class Graphify < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
-    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    url "https://files.pythonhosted.org/packages/45/37/edbf1b0707709013c0cf2e8317e03d97ed29bf4cac709fe328904ae92a38/click-8.5.1.tar.gz"
+    sha256 "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
   end
 
   # cryptography: source on macOS, prebuilt manylinux wheel on Linux.
@@ -117,8 +117,8 @@ class Graphify < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/63/5b/f68319f4fe624311a744a33d10fdbcac4c971991e348223cba60d31780b2/jiter-0.18.0.tar.gz"
-    sha256 "a0ca63fd9450a212e4e658d4cfe0ab4977c4f9b0003c68828b843c65e27662ff"
+    url "https://files.pythonhosted.org/packages/67/de/8dfd06a2153d8ab6a83a8ca8f8ae3ff860ce2fe324ee6a5d05294b621c2a/jiter-0.19.0.tar.gz"
+    sha256 "ba3064f8be276d7cfb83c2fb85c858be533da2c2f80f9b048c3781b45a57a195"
   end
 
   resource "jsonschema" do
@@ -152,8 +152,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/9f/7b/e01d5288d13e3bae3714ed39df402f99f88f422dcd978c5ce94848037200/openai-3.42.1.tar.gz"
-    sha256 "4222d919374648ff572753626e942f26eb1ece8a5e0e9a2708c9be4d560f070f"
+    url "https://files.pythonhosted.org/packages/34/b6/23cddcb571d6eafe7b4bb58c7e0a068076121b7b001b776179994cca6a03/openai-3.46.0.tar.gz"
+    sha256 "fb34cd8cab6809ad0aa8dc42493fa622aaa87c814fd8e67a6fb3fa1f1e5d952d"
   end
 
   resource "opentelemetry-api" do
@@ -167,13 +167,13 @@ class Graphify < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/9f/d5/b4867fa7c7f04c34997d7d8aad744f64d210bb99d67cf18bf3fb1eea1aed/pydantic-2.14.2.tar.gz"
-    sha256 "fb7b2db6cefe8414dd612edeede49c4c433acb0432b0f92b95024e45f66c505d"
+    url "https://files.pythonhosted.org/packages/b4/fc/1203d011145c98ddce3cd2f505bb54375ef8d43223053df6bfcf3c746f46/pydantic-2.14.3.tar.gz"
+    sha256 "1054f237f4d4733e5a30e1e2333bd33a2004ab9ab1510bd053a9a31bb48e232d"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/af/8e/23ec1021834e35041fbb2f10946141e6acdfd39379c45cc4d65a4e8a1d98/pydantic_core-2.50.2.tar.gz"
-    sha256 "1b0e8dc3932cf4e9ed5727570325cacc716b9409ffc794a221c0ccc72e8eb775"
+    url "https://files.pythonhosted.org/packages/9c/0f/34f9ce4ba701dd0b815033ef94d99b56f66200e578ee6052aa3ac26f064e/pydantic_core-2.50.4.tar.gz"
+    sha256 "aead3b74b68396bf0feab5d57e050b730ded7df55853c1e048a87e00aaf033c6"
   end
 
   resource "pyjwt" do
@@ -202,8 +202,8 @@ class Graphify < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
-    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
+    url "https://files.pythonhosted.org/packages/f1/54/e3bf7a314a5e5d0bab5455cfcfc7634ca136fc8b249a7c15c829e88b00f2/regex-2026.11.7.tar.gz"
+    sha256 "8eedab0d8ac69b0602628bc59ab559d09007ff3bcd92aa740e62b10315403007"
   end
 
   resource "requests" do
@@ -222,8 +222,8 @@ class Graphify < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/71/7f/3b8ec4f27833f7b8c270a3ef960b6d435e1065439847bc0fcd1e58ae898b/sse_starlette-3.6.0.tar.gz"
-    sha256 "623151d6c20dc0eebf1b3379c27faae91fff883bac7ab6665f16f46440a88b3a"
+    url "https://files.pythonhosted.org/packages/41/43/a232e3cd804293bd4f6d01e8895bc0f6f83ea148d712baf9d783c7d93d23/sse_starlette-3.7.0.tar.gz"
+    sha256 "326416da2ab52e9a41b3f409d3ff897eda45aa68c9f3b7b17d0913aab8d219c3"
   end
 
   resource "starlette" do
@@ -934,7 +934,7 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-scala" do
-    version "0.26.4"
+    version "0.26.9"
     livecheck do
       url "https://pypi.org/pypi/tree-sitter-scala/json"
       strategy :json do |json|
@@ -944,22 +944,22 @@ class Graphify < Formula
 
     on_macos do
       on_arm do
-        url "https://files.pythonhosted.org/packages/b9/61/a54c1eb79859901dec957562f700bb57a436f69020e659f7ea248f61bdf2/tree_sitter_scala-0.26.4-cp39-abi3-macosx_11_0_arm64.whl"
-        sha256 "e65e4880c46bb9c7dab9de6fa38f8f5f3362b2c92f3f431c238c022b2ab303d9"
+        url "https://files.pythonhosted.org/packages/3f/2c/4b542740d1c3d68bf8a59e76724c00198227f28c091af035c4751cb32007/tree_sitter_scala-0.26.9-cp39-abi3-macosx_11_0_arm64.whl"
+        sha256 "1e36e872680aff18708fdb4061fa385c5c2922f01deefec72075f0dde29dd0f1"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/67/74/178dd35fff14d71eee7e9030d6463e36791e8c5b9dde6b5d7d30acef792f/tree_sitter_scala-0.26.4-cp39-abi3-macosx_10_9_x86_64.whl"
-        sha256 "831047b6e42c77617f4f2af4c8cc86941ef401b92f53db67b88859eab7485a15"
+        url "https://files.pythonhosted.org/packages/61/b1/ed0ef2b43bcc0c2f0bb2fcacb575b258981d042dcbf5ae9a9e204aa6d6c0/tree_sitter_scala-0.26.9-cp39-abi3-macosx_10_9_x86_64.whl"
+        sha256 "9809b56cec6f6d97358389416eff3ddda65d10b74a2be3db71ba7d8915437773"
       end
     end
     on_linux do
       on_arm do
-        url "https://files.pythonhosted.org/packages/45/26/6a5e6875b8518a657834d2fe7962f2a689327e7f5073f7d31239010370b5/tree_sitter_scala-0.26.4-cp39-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
-        sha256 "cf35d9f1460a84bae139c9eb97519c39373ed613a9073256f9ce245a9447ec40"
+        url "https://files.pythonhosted.org/packages/86/09/2a511f3022034b4185fbc13a36a51543714f72a7d38b3f40c46d23be47d9/tree_sitter_scala-0.26.9-cp39-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+        sha256 "4631c06c66ff4f595d420206b695ced788528db2a4a3bbf5a59c7a02098724c8"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/3e/97/97b1db3e6a87ff423c853202df47ae67c798bb93e0026bf86c1c039cb6bd/tree_sitter_scala-0.26.4-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
-        sha256 "44f017841049b54bc4ea455833f46d67d1fd05121caa07bebc03b5667817a325"
+        url "https://files.pythonhosted.org/packages/e7/5b/1cb425bb6925e2a77b4320f491fbc6da8e18ac4f6a9e43b8c298f597f7a8/tree_sitter_scala-0.26.9-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+        sha256 "897749e1593123c4abc25485162889fd46a2e3440913e9c07fe3c90ed0ba6227"
       end
     end
   end
@@ -1130,8 +1130,8 @@ class Graphify < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c09092e6b34058f36a460eea2d4c3e8b910c695975a0/typing_inspection-0.4.4.tar.gz"
-    sha256 "547274fa6b0a561ccf549cc9524b999a578e737d015d8709d021f9d0d13bea47"
+    url "https://files.pythonhosted.org/packages/ff/50/0195198eb1d75bab716bb0a813abea4cc394bfa17a92a189f021a34859af/typing_inspection-0.4.5.tar.gz"
+    sha256 "7f16c411e7930dc79596d42ab44672a3fe5f60eb34b781a1647e7872363120c7"
   end
 
   resource "urllib3" do
