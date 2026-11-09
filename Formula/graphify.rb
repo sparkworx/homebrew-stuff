@@ -6,6 +6,7 @@ class Graphify < Formula
   url "https://files.pythonhosted.org/packages/ee/b6/50fc873d5502f00c2d92c970fa6cebd646e04b1df2add3b4041d5fbb0f86/graphifyy-0.9.104.tar.gz"
   sha256 "01963f515fcdd2e369c179ee701a3865623c5ee6b7ff8dafa2f1929d5be0d1c6"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -340,6 +341,37 @@ class Graphify < Formula
       on_intel do
         url "https://files.pythonhosted.org/packages/41/5a/a8855cbb5bbab28adb29c2c7f0e7be5a9f1d21450c13b3c3e613190d9b8c/tree_sitter_c_sharp-0.23.5-cp310-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl"
         sha256 "aa88a780204cd153c4c1ae2d59c654cee1402212fa0d069823d6d34301587438"
+      end
+    end
+  end
+
+  resource "tree-sitter-commonlisp" do
+    version "0.4.1"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-commonlisp/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
+    on_macos do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/10/e8/d241bf4d543fb982d3eb39dbda68a42f960a236f802dd012766bf305e041/tree_sitter_commonlisp-0.4.1-cp38-abi3-macosx_11_0_arm64.whl"
+        sha256 "378a5b3597c0bcd9d65b79b4dae664f4966ccf4fa72fab0f8f08e351d861596d"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/b5/24/7fda258e5aeb8665d7a5d0d6b94f262fb795f014c399f6ec51768b0bea23/tree_sitter_commonlisp-0.4.1-cp38-abi3-macosx_10_9_x86_64.whl"
+        sha256 "011ad2788ad8517cc7e96220b5442d32f0b95f002be1ae6db0491e123b9f16d2"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/3f/ef/0446ee7d5ebc25f384de6fd3a9bb203ff9b701b82ee604967dc11d0c9552/tree_sitter_commonlisp-0.4.1-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+        sha256 "33ed313aa0d75172a84b816fad3d3d4aa803cc3bd672a3165c5a594e345c2c61"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/32/6f/6f42b794a2fa1d69dd34f9ce887839065a8b32405cd613733a6d2ef83da1/tree_sitter_commonlisp-0.4.1-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        sha256 "bd130f1866009e0b9000d0f11db061fbc0499a0b5b053e4d1f36b9b5cd1f2ef8"
       end
     end
   end
@@ -747,6 +779,37 @@ class Graphify < Formula
     end
   end
 
+  resource "tree-sitter-ocaml" do
+    version "0.26.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-ocaml/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
+    on_macos do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/6e/57/7ccdf4785fb2ebb8052eb9fcf46b7977ed7efb6e727cd7c6b4f92ffae93e/tree_sitter_ocaml-0.26.0-cp310-abi3-macosx_11_0_arm64.whl"
+        sha256 "b680891bc13d1231ff93a02a3c6e8e43be95a239db9bb2517471cfd7d780b2ac"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/4d/af/43b9f7b6518dc706b17e88635a4442000d095a24f5275aeb20bf2b82163c/tree_sitter_ocaml-0.26.0-cp310-abi3-macosx_10_9_x86_64.whl"
+        sha256 "fe9f2fa352bd74d008b8bf63c5293de2c07b7522f5fc4b9d564fbd572737abc2"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/c1/6e/14719208f923b0d7a970d6cf56b441c3831c7a39c12ca772e67422ccefcd/tree_sitter_ocaml-0.26.0-cp310-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+        sha256 "679d8077bafb6a1304154e5ce1dbbce1812d6c38f5984509131849d3b93deba3"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/2c/11/5c7fcc4743cad0c22948ec56c521ce685ef9a4556c8cefa064be61f2b208/tree_sitter_ocaml-0.26.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+        sha256 "cf83ceb4f85026246d0c1d2364c50f270e9e99e106831e6b9c92bb7ebec75514"
+      end
+    end
+  end
+
   resource "tree-sitter-pascal" do
     version "0.11.0"
     livecheck do
@@ -964,6 +1027,37 @@ class Graphify < Formula
     end
   end
 
+  resource "tree-sitter-solidity" do
+    version "1.2.13"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-solidity/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
+    on_macos do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/20/35/a8a5443d95333984914ef51c661bd85b20fee2374b0b866243d25bbc0efe/tree_sitter_solidity-1.2.13-cp38-abi3-macosx_11_0_arm64.whl"
+        sha256 "703fa18a90289e20cec25ddfc0fc574440e86781e3c5d26c99acb757a6acb109"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/7c/cf/9387cd5cda028790dada6f999625e19489d7d76e8e92999403421ad7b1ce/tree_sitter_solidity-1.2.13-cp38-abi3-macosx_10_9_x86_64.whl"
+        sha256 "a662d040cbe9d1a9f1083eb2be461c60748b7c90782de1f7505bf6494a1d5c05"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/2d/c7/c329e23b3b93c3d55d887e0320794ea42681770704987468060964608cfb/tree_sitter_solidity-1.2.13-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+        sha256 "3fd017ffcdcf38422175176d1b3623a3499025c6c7c896b2502c0bd55bd2b36d"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/de/81/685a3c5dec31ba2c38615da84b74bc8973a77a0989091c5e2efaa7f5e4e8/tree_sitter_solidity-1.2.13-cp38-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        sha256 "490a11968c79a17f9b01156d2d655f3e602ff8de9256b026cf1deb6213d34c78"
+      end
+    end
+  end
+
   resource "tree-sitter-sql" do
     version "0.3.11"
     livecheck do
@@ -1053,6 +1147,39 @@ class Graphify < Formula
       on_intel do
         url "https://files.pythonhosted.org/packages/49/d1/a71c36da6e2b8a4ed5e2970819b86ef13ba77ac40d9e333cb17df6a2c5db/tree_sitter_typescript-0.23.2-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         sha256 "e96d36b85bcacdeb8ff5c2618d75593ef12ebaf1b4eace3477e2bdb2abb1752c"
+      end
+    end
+  end
+
+  resource "tree-sitter-vb-dotnet" do
+    version "0.3.0"
+    livecheck do
+      url "https://pypi.org/pypi/tree-sitter-vb-dotnet/json"
+      strategy :json do |json|
+        json.dig("info", "version")
+      end
+    end
+
+    on_macos do
+      on_arm do
+        url "https://files.pythonhosted.org/packages/68/22/d209d8bce9148d50e17190b8c3fb7909fa51d65ed41a83efb7d99f4aa180/tree_sitter_vb_dotnet-0.3.0-cp310-abi3-macosx_11_0_arm64.whl"
+        sha256 "ad7dcf05170b429a07f05f78a2f0f5d3d46fc6174b8a7c90eec7cbfb980fca76"
+      end
+      on_intel do
+        # no wheel published for this platform; build the (complete) sdist from source
+        url "https://files.pythonhosted.org/packages/04/a1/95f99d291163cab128f86e6303268f50c37856bcf7dc361435f752549a48/tree_sitter_vb_dotnet-0.3.0.tar.gz"
+        sha256 "6e7178a8cf7c34b8ba07aa3914bef5475f4eafd348cdd393ff3ebfc7cb41ae61"
+      end
+    end
+    on_linux do
+      on_arm do
+        # no wheel published for this platform; build the (complete) sdist from source
+        url "https://files.pythonhosted.org/packages/04/a1/95f99d291163cab128f86e6303268f50c37856bcf7dc361435f752549a48/tree_sitter_vb_dotnet-0.3.0.tar.gz"
+        sha256 "6e7178a8cf7c34b8ba07aa3914bef5475f4eafd348cdd393ff3ebfc7cb41ae61"
+      end
+      on_intel do
+        url "https://files.pythonhosted.org/packages/cd/69/d089c1f8e12ce743d41546650ca9a479bf99ea0eb74652ccd8939b198a4b/tree_sitter_vb_dotnet-0.3.0-cp310-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        sha256 "7d2a2c6670c9f5917b3606e8a44045d1b508fc3258ede9f31a9b3a75f704dc99"
       end
     end
   end
@@ -1217,9 +1344,9 @@ class Graphify < Formula
     # would surface here as an unresolved-symbol ImportError), whether it was
     # built from source or vendored as a wheel.
     grammars = %w[
-      bash c c_sharp cpp elixir fortran go groovy hcl java javascript json
-      julia kotlin lua objc pascal php powershell python ruby rust scala sql
-      swift typescript verilog zig
+      bash c c_sharp commonlisp cpp elixir fortran go groovy hcl java javascript
+      json julia kotlin lua objc ocaml pascal php powershell python ruby rust
+      scala solidity sql swift typescript vb_dotnet verilog zig
     ]
     system python, "-c", <<~PYTHON
       import importlib
