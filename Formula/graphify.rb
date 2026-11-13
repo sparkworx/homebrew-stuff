@@ -3,8 +3,8 @@ class Graphify < Formula
 
   desc "Turn any folder of code or docs into a queryable knowledge graph"
   homepage "https://github.com/Graphify-Labs/graphify"
-  url "https://files.pythonhosted.org/packages/1a/b8/d077487b0d61f1332595894d38af9b38c106a3c1b961147c0111807f6863/graphifyy-0.9.105.tar.gz"
-  sha256 "3633bd65a9ddfb2fb1b19030e0e70f4e46fec8c07fe4b1b9f9fdf86fad171ee3"
+  url "https://files.pythonhosted.org/packages/16/a2/1c678019373c8dff6728c137a7d24b56e7f8203c4ee546aae0decf770505/graphifyy-0.9.108.tar.gz"
+  sha256 "de1d155fbcff074a8bb4a71007942f420fb7e91c45eb618fcb8a076335fa713b"
   license "MIT"
 
   livecheck do
@@ -26,8 +26,8 @@ class Graphify < Formula
   end
 
   resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/80/d3/cedfb7ed99b796c3b6b01bcb8e189f793d4eedb05979149c0b2113c5511c/anthropic-2.7.0.tar.gz"
-    sha256 "04775ef8ea252c1815e33c289848b18efa59a5da466e42be9bd91e358c4ac6f0"
+    url "https://files.pythonhosted.org/packages/75/e6/aabc3c266a0aaf38fa542648585741fce9616ba4cd034ddde74548f790a0/anthropic-2.8.0.tar.gz"
+    sha256 "d34e389ba0544cd64e033eb7475f46cc1ac6f2a388cdcd472b33ad4ac29ef40c"
   end
 
   resource "anyio" do
@@ -152,8 +152,8 @@ class Graphify < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/83/8f/adc3e9f7077c16a2417eebb219df2f5933f4fa532fab143c6bbb1c287c67/openai-3.49.0.tar.gz"
-    sha256 "44badf2bea9bcd643dafa0bc4d5a109a14395889219fd68b8560322288196e96"
+    url "https://files.pythonhosted.org/packages/13/b4/ba46d04d1835d979d89ed7c0d7d94b4ca341b1333e9423c26d97962f6f98/openai-3.50.0.tar.gz"
+    sha256 "ff094ba851ce512e0682f259e8c5bdc4802c7ef5373f68e7fd261261bb4496f2"
   end
 
   resource "opentelemetry-api" do
@@ -996,7 +996,7 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-scala" do
-    version "0.26.10"
+    version "0.26.13"
     livecheck do
       url "https://pypi.org/pypi/tree-sitter-scala/json"
       strategy :json do |json|
@@ -1006,22 +1006,22 @@ class Graphify < Formula
 
     on_macos do
       on_arm do
-        url "https://files.pythonhosted.org/packages/0f/0d/64b749c95ddc8b4f7232ec0ab486eb3e6e9d6d9f476089da87d7b0bcbbed/tree_sitter_scala-0.26.10-cp39-abi3-macosx_11_0_arm64.whl"
-        sha256 "41dc85fe005c644c79b6f50718d8f3198eaff2de2926ae9dc4804df6d6c4889b"
+        url "https://files.pythonhosted.org/packages/5f/02/5c89d87ebcf7faf45c294590d7d95d7cd64e0a9fc81939bce136054a8dd2/tree_sitter_scala-0.26.13-cp39-abi3-macosx_11_0_arm64.whl"
+        sha256 "789d6dc51818834620f368f6689877b10c3d2e2bf947935afe1fc88810ddd7c2"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/3e/4a/c8f32bcb2c65ec79b0c3aad92390c112db978fefa72de2b1b172618ec081/tree_sitter_scala-0.26.10-cp39-abi3-macosx_10_9_x86_64.whl"
-        sha256 "bbd959e49132a8c0d897fd1257087b877cf2473eecb9fd21b5f2cf5d99ffb67a"
+        url "https://files.pythonhosted.org/packages/ad/66/a99cb4f8bc7fbb6ee8320b03fd2d6688e7daef6226451c242bce18aca521/tree_sitter_scala-0.26.13-cp39-abi3-macosx_10_9_x86_64.whl"
+        sha256 "9f7022fa89f2adc58cdb678bb1ac5af16b226008ce490ad5a03e9095c164d065"
       end
     end
     on_linux do
       on_arm do
-        url "https://files.pythonhosted.org/packages/8b/4d/83d669c78b3a4eb0fc7b6b950577414723f97337389f26482ecf27a4f4e6/tree_sitter_scala-0.26.10-cp39-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
-        sha256 "7f0901f82e19c57ebd42cddd8b279d495ec94e6d39aca602c0de4d021bef7a44"
+        url "https://files.pythonhosted.org/packages/9e/6a/bbcf152a17b558d2475bda422ed22c8271f525341d27aa1878e7cb1025ca/tree_sitter_scala-0.26.13-cp39-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+        sha256 "235f2c14d5434aa6151aab0144ff37c9cc2ded2be9678898c6b0aa4be2a2d417"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/6e/bc/d944bb0a1eded6f21b9ed961c372b39f190d410a5a49543fa8ff45dd3a49/tree_sitter_scala-0.26.10-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
-        sha256 "e336290579b60bd7f2be210f6bfec55e3c1653d6a8c0dc477edab53be61f9029"
+        url "https://files.pythonhosted.org/packages/d9/ee/36932f6d4255597d1fc33e2051edaa1ff94550c239a9bef7d37e68b09bdf/tree_sitter_scala-0.26.13-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+        sha256 "e3ff5a30430243b3e49a3784499209cd5678010c6a164c0b695e5aedbe0fe006"
       end
     end
   end
@@ -1058,7 +1058,7 @@ class Graphify < Formula
   end
 
   resource "tree-sitter-sql" do
-    version "0.3.12"
+    version "0.3.13"
     livecheck do
       url "https://pypi.org/pypi/tree-sitter-sql/json"
       strategy :json do |json|
@@ -1068,22 +1068,22 @@ class Graphify < Formula
 
     on_macos do
       on_arm do
-        url "https://files.pythonhosted.org/packages/0f/c7/2ea3cceb8d27a9746279d8cbaf6a37c9191dd753b6d2b3bc764501893ab2/tree_sitter_sql-0.3.12-cp310-abi3-macosx_11_0_arm64.whl"
-        sha256 "6a9e169a7e92f6cbf2ec13a996eded9b9db5c5d3c3d29aea257b8d82beb8899c"
+        url "https://files.pythonhosted.org/packages/6c/94/6457c360ad33dde3800ee3728588ee2fd18688ec24cae64f00233687a751/tree_sitter_sql-0.3.13-cp310-abi3-macosx_11_0_arm64.whl"
+        sha256 "37261808e55a88457c02fe4844ed87d20cd9ba18c997244538a3c5cd3e508408"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/4e/59/e95bc6ffd3e40f22a32504e67fc54808910e2db52caaa5cd6a7a74487bc1/tree_sitter_sql-0.3.12-cp310-abi3-macosx_10_9_x86_64.whl"
-        sha256 "93f0e0f8fe4370cf96bfd9abb7fc98c7b968024c556588f200dd034f09af63f2"
+        url "https://files.pythonhosted.org/packages/03/43/ad594d4b57bcd103c00ca57b2d3fffb235f538270ce412d233804d7a8374/tree_sitter_sql-0.3.13-cp310-abi3-macosx_10_9_x86_64.whl"
+        sha256 "37f526282e06abefc395dd4e3d4dee3c3ae9a5a71abdf8c0b6a0c3949b4f58e8"
       end
     end
     on_linux do
       on_arm do
-        url "https://files.pythonhosted.org/packages/b5/aa/b317e62f2718be83bb402bc58e30537b1f5bba54ee2f8fc9100fd4d58449/tree_sitter_sql-0.3.12-cp310-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
-        sha256 "05eae36833872814541328e6539e5950a6bae5479f455193aacf313e40cd37af"
+        url "https://files.pythonhosted.org/packages/3f/31/ff23443c92ab3c3137227b1305a770903331a85b007230ccd7d15c422738/tree_sitter_sql-0.3.13-cp310-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl"
+        sha256 "4ea67aed3f04534421aac7e3a414649088fe0a1ff65283e81cbb5cf22ddb01c0"
       end
       on_intel do
-        url "https://files.pythonhosted.org/packages/99/1d/56d97f058dfd85f9fb812e7d6e0e89dde0bf765815bf7a15705238e89344/tree_sitter_sql-0.3.12-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
-        sha256 "975f6dfb17adec14dfd62e22c582c22d3d89c8a9e6aa4b32fd90f55d7244e2f5"
+        url "https://files.pythonhosted.org/packages/ed/ff/c8650b1d47d8ffeed7750938cd85cd1c85cb4d0213790bf6a8f9d49837f3/tree_sitter_sql-0.3.13-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl"
+        sha256 "86569da8c728a73859b41477eff2dbdc2a2c31da77a1eda9328b27d3c2dbd7ce"
       end
     end
   end
